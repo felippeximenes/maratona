@@ -1,7 +1,11 @@
-# Maratona (codinome)
+# Glowbox
 
 App de acompanhamento de séries e filmes para Android e iOS, sucessor
-espiritual do TV Time (encerrado em 15/07/2026). Nome definitivo na Fase 3.
+espiritual do TV Time (encerrado em 15/07/2026). Nome decidido em 13/10/2026:
+docs/especificacao/00-nome.md.
+
+"maratona" é o nome da pasta e do repositório (codinome antigo) e não deve ser
+alterado agora.
 
 ## Fase atual
 Fase 3: especificação e nome. Fases 1 e 2 concluídas em 13/10/2026.
