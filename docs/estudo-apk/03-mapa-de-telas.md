@@ -11,7 +11,10 @@ quais eram sociais ou de engajamento?
 1. **Quatro abas principais:** Séries, Filmes, Explorar e Perfil. A pasta de
    ícones da barra inferior tem exatamente esses quatro, mais um quinto ícone
    (`dev`) que parece ser um menu interno de desenvolvimento, sem uso pelo
-   público.
+   público. O relato de uso confirma quatro abas; a terceira é lembrada como
+   "busca" (ícone de lupa), o que indica que o ícone `explore` era uma lupa e
+   que, para o usuário, a aba servia sobretudo para procurar títulos
+   (forte). A ordem exata e a aba inicial continuam sem confirmação.
 2. **O núcleo é pequeno e bem definido:** lista "assistir a seguir" de
    episódios, tela da série com temporadas e estados (assistindo, para depois,
    parei, em dia, terminada), tela do episódio, tela do filme, listas
@@ -26,11 +29,24 @@ quais eram sociais ou de engajamento?
    tela do episódio e no onboarding (definindo o progresso de cada série).
    Ao marcar um episódio com anteriores pendentes, o app perguntava se devia
    marcar os anteriores também, com opção de "nunca perguntar de novo"
-   (forte). O mesmo vale para temporadas.
+   (forte). O mesmo vale para temporadas. O relato confirma a lista e a tela
+   do episódio como caminhos de uso diário, e aponta a pergunta sobre os
+   anteriores como uma das funções mais valiosas do app: resolve de uma vez o
+   que levaria vários toques.
 5. **Reassistir é um estado próprio.** Episódio, temporada e filme podem ser
-   marcados como "visto uma vez" ou "revisto" (forte).
-6. **Havia modo visitante.** Um convite de cadastro global aparecia durante o
+   marcados como "visto uma vez" ou "revisto" (forte). Pelo relato, o tempo
+   das reassistidas entrava no total das estatísticas.
+6. **Depois de marcar, o retorno era discreto.** O relato lembra só uma
+   confirmação simples de "visto", sem abrir tela de reação nem comentários.
+   As seções de nota, emoção e personagem existiam na tela do episódio, mas
+   não eram empurradas ao usuário a cada marcação (forte para a confirmação;
+   fraco para a ausência de tela de reação, pois depende de memória).
+7. **Havia modo visitante.** Um convite de cadastro global aparecia durante o
    uso, o que indica que dava para usar o app antes de criar conta (forte).
+8. **O uso real se concentrava no núcleo.** O relato confirma marcação,
+   "para depois", "parei de assistir", volta automática de séries com
+   episódios novos e notificações de estreia e de uma hora antes. Rankings
+   quase nunca eram abertos e os comentários não fizeram falta.
 
 ### Árvore de navegação provável
 
@@ -87,7 +103,10 @@ Modais e avisos transversais
 
 Legenda: **[forte]** = dois ou mais indícios independentes (por exemplo,
 chave de tradução + evento, ou evento + ícone); **[fraco]** = um indício só.
-Entre parênteses, os nomes que sustentam o item.
+Entre parênteses, os nomes que sustentam o item. O relato de uso de
+13/10/2026 conta como um indício independente e aparece como *(relato)*;
+**[relato]** sozinho marca algo lembrado no uso que não tem nome
+correspondente nas fontes estáticas.
 
 ### 1. Onboarding e autenticação
 
@@ -147,15 +166,25 @@ Entre parênteses, os nomes que sustentam o item.
 - Marcar o próximo episódio como visto direto na lista, por toque na caixa ou
   por deslizar. **[forte]** (`my_shw-episode_checked`, `my_shw-episode_swiped`,
   `my_shw-episode_watched`, `shows_list_episode_watched`, ícones
-  `checkmark_*`)
+  `checkmark_*`, *relato*). No uso, o toque fazia o item deslizar para o lado
+  com uma marca verde de visto; a animação era marcante e parte do prazer de
+  marcar.
+- Confirmação simples de "visto" depois de marcar. **[forte]**
+  (`track_episode_success_modal_seen`, *relato*)
 - Desfazer a marcação logo depois. **[fraco]** (`undo`)
+- Série terminada ou em dia volta sozinha para a lista quando sai temporada
+  nova, com destaque de "novos episódios disponíveis". **[forte]**
+  (`new_episode`, *relato*); o texto exato do destaque não foi conferido.
 - Ver quantos episódios faltam além do próximo. **[forte]**
   (`shows_list_nb_more_episodes`, `nb_episodes`)
 - Mandar um episódio/série para "depois" pela lista. **[forte]**
-  (`my_shw-episode_watch_later_selected`, ícone `watch_later`)
+  (`my_shw-episode_watch_later_selected`, ícone `watch_later`, *relato*).
+  No uso, "para depois" servia para guardar algo que se quer ver e não
+  esquecer.
 - Remover ou parar uma série deslizando. **[forte]**
   (`my_shw-remove_swiped`, `my_shw-show_removed`, `my_shw-show_stopped`,
-  `shows_list_show_remove`)
+  `shows_list_show_remove`, *relato* para "parar"). No uso, "parei de
+  assistir" era a saída para séries que ficaram chatas.
 - Alternar entre lista e grade. **[forte]** (`my_shw-grid_view_*`, ícones
   `grid_active`, `grid_inactive`)
 - Ver "em breve": episódios a estrear agrupados por ontem, hoje, amanhã e
@@ -196,7 +225,8 @@ Entre parênteses, os nomes que sustentam o item.
   `show_watch_next_section_started_title`, `shw-watch_next_swiped`)
 - Lista de temporadas, incluindo especiais. **[forte]**
   (`show_seasons_section_title`, `specials_season`, `specials_count_text`,
-  `season_x`)
+  `special_episode`, `season_x`). Pelo relato, especiais (temporada 0) e
+  OVAs atrapalhavam um pouco e quase não eram usados.
 - Marcar episódio, temporada inteira, ou tudo como visto/não visto.
   **[forte]** (`mark_episode_as`, `mark_season_as`, `watch_all`,
   `unwatch_all`, `shw-episode_watched`, `shw-season_watched`,
@@ -204,7 +234,8 @@ Entre parênteses, os nomes que sustentam o item.
 - Ao marcar algo à frente, responder à pergunta sobre marcar os episódios ou
   temporadas anteriores (com opção "nunca"). **[forte]**
   (`mark_previous_episodes_modal_*`, `shw-mark_prev_episodes_*`,
-  `shw-mark_prev_seasons_*`)
+  `shw-mark_prev_seasons_*`, *relato*). No uso, a pergunta aparecia sempre
+  que se marcava um episódio adiantado; a opção "nunca" não foi lembrada.
 - Ligar notificações da série; estado vazio explica se as notificações
   estão ligadas. **[forte]** (`shw-notifications_on_selected`,
   `show_episodes_notifications_*_empty_description`,
@@ -245,7 +276,8 @@ Entre parênteses, os nomes que sustentam o item.
 - Marcar como visto, ou escolher "visto uma vez" / "revisto". **[forte]**
   (`mark_episode_as_watched`, `epi-episode_watched`,
   `epi-watched_choice_selected`, `watched_once_episode`, `rewatched_episode`,
-  ícones `watch/watched_once`, `watch/rewatched`)
+  ícones `watch/watched_once`, `watch/rewatched`, *relato* para marcar
+  abrindo o episódio)
 - Deslizar para o episódio anterior ou seguinte. **[forte]**
   (`epi-episode_swiped`, `next_button`)
 - Dar nota ao episódio. **[forte]** (`episode_rating_section_title`,
@@ -310,7 +342,8 @@ Entre parênteses, os nomes que sustentam o item.
 
 - Sub-abas dentro de Explorar (Descobrir, Feed, Grupos). **[fraco]** para a
   composição exata (`explore-tab_selected`, `discover_tab`, `feed_tab`,
-  `groups_tab`); **[forte]** que a aba existe (ícone `main/explore`, `explore`)
+  `groups_tab`); **[forte]** que a aba existe (ícone `main/explore`, `explore`,
+  *relato*). O relato lembra a aba como "busca", não como Feed ou Grupos.
 - Vitrines: séries e filmes em alta, recomendados para você, populares no
   seu país, atividade da comunidade, grupos. **[forte]**
   (`discover_trending_*`, `discover_recommended_shows_section_title`,
@@ -359,12 +392,16 @@ Entre parênteses, os nomes que sustentam o item.
   `lists/lock_icon`)
 - Compartilhar lista. **[forte]** (`list_detail-share_selected`)
 
+O relato não confirma o uso de listas personalizadas (pergunta 12 sem
+resposta). A existência é forte; a relevância para o nosso app, não.
+
 ### 10. Perfil (próprio)
 
 - Estatísticas: tempo gasto com séries e filmes, horas na semana, gêneros e
   emissoras mais vistos. **[forte]** (`stats`, `time_spent_*`,
   `top_show_genres`, `top_show_networks`, `nb_hours_this_week`,
-  `prf-stats_*`)
+  `prf-stats_*`). Reassistidas somavam no tempo total. **[forte]**
+  (`rewatched_episode`, `shows_list_episode_rewatched`, *relato*)
 - Séries e filmes favoritos, editáveis e compartilháveis. **[forte]**
   (`favorite_shows`, `favorite_movies`, `edit_favorite_*`,
   `prf-favorite_*`, `favorite_shows-share_*`)
@@ -396,7 +433,9 @@ Entre parênteses, os nomes que sustentam o item.
   no dia seguinte. **[forte]** (`settings_notifications_new_episode`,
   `settings_notifications_one_hour_before`,
   `settings_notifications_ten_minutes_before`,
-  `settings_notifications_next_day`, `settings_shows_notification_section_title`)
+  `settings_notifications_next_day`, `settings_shows_notification_section_title`).
+  No uso, ficavam ligadas a de estreia e a de uma hora antes, e a de uma hora
+  antes chegava no horário (*relato*).
 - Notificações sociais: curtidas em comentários, pedidos para seguir,
   comentários de amigos, conquista desbloqueada, notícias. **[forte]**
   (`settings_notifications_*`, `settings_activity_notification_section_title`,
@@ -461,7 +500,10 @@ compartilhar e remover. **[forte]** (24 eventos `longpress-shw_*` e
 
 ## Funções sociais e de engajamento
 
-Separadas do núcleo para facilitar o corte na Fase 3.
+Separadas do núcleo para facilitar o corte na Fase 3. Pelo relato, nada
+desta seção era usado com frequência: rankings quase nunca eram abertos e os
+comentários não fizeram falta. Feed, grupos, memes e votação entre títulos
+não foram citados.
 
 ### Comentários (episódio, filme, tópico)
 
@@ -620,32 +662,101 @@ ano, `dsc` = descobrir, `ob` = onboarding, `_dm`/`_lm` = tema escuro/claro.
 - Não foram lidas as pastas `animations`, `countries` e `fonts`, nem os
   outros idiomas.
 - A seção sobre a regra do "próximo episódio" só mostra onde ela aparece. O
-  comportamento (o que acontece com especiais, episódios fora de ordem,
-  temporadas novas) fica para o passo 5.
+  relato já adianta duas coisas (temporada nova traz a série de volta;
+  especiais atrapalham), mas a regra completa fica para o passo 5.
+- O relato é a memória de um único usuário, colhida depois do encerramento
+  do app. Serve para confirmar e priorizar, não para descrever detalhes de
+  interface (textos exatos, ordem das abas, tempo das animações).
 
-## Perguntas para o Felippe
+## Relato de uso (Felippe, 13/10/2026)
 
-1. Quais abas apareciam na barra inferior, em que ordem, e em qual delas o
-   app abria?
-2. Na aba de séries, você marcava episódios mais por toque na caixa, por
-   deslizar, ou abrindo o episódio? Algum deles fazia algo diferente?
-3. Ao marcar um episódio adiantado (por exemplo, o 5 sem ter marcado o 1 a
-   4), o que o app perguntava, e você costumava aceitar ou recusar?
-4. Logo depois de marcar um episódio, o que aparecia: uma tela de reação
-   (nota, emoção, personagem), os comentários, ou nada?
-5. Como episódios especiais (temporada 0) entravam na lista "assistir a
-   seguir"? Eles atrapalhavam?
-6. Quando uma série ganhava temporada nova depois de você ter terminado, ela
-   voltava sozinha para "assistir a seguir"? E séries paradas?
-7. Você usava "para depois" e "parei de assistir"? Qual a diferença prática
-   entre os dois na lista?
-8. Você chegou a registrar reassistidas? Elas contavam nas estatísticas de
-   tempo?
-9. Quais notificações você mantinha ligadas (estreia, uma hora antes, dez
-   minutos antes, dia seguinte) e chegavam no horário certo?
-10. Que telas você abria toda semana e quais nunca abriu (feed, grupos,
-    memes, rankings, votação entre títulos)?
-11. Os comentários ficavam escondidos até você marcar o episódio? Você lia
-    comentários com frequência?
-12. Usou o widget, a importação da Netflix ou as listas personalizadas? Algo
-    nelas fazia falta?
+Respostas às perguntas da primeira versão desta nota, resumidas com outras
+palavras.
+
+1. **Barra inferior:** Séries, Filmes, busca (lupa) e Perfil. Ordem exata e
+   aba inicial não lembradas.
+2. **Como marcava:** quase sempre pela lista, com um toque; o item deslizava
+   para o lado e surgia uma marca verde de visto. Também marcava abrindo o
+   episódio. Havia mais de um caminho para marcar série ou filme.
+3. **Episódio adiantado:** o app sempre perguntava se devia marcar os
+   anteriores. Função muito valorizada, porque evita marcar um por um.
+4. **Depois de marcar:** só uma confirmação simples de "visto".
+5. **Especiais e OVAs:** atrapalhavam um pouco; quase não eram usados.
+6. **Temporada nova:** a série terminada voltava sozinha, com destaque de
+   "novos episódios disponíveis", e chegava notificação uma hora antes do
+   episódio ir ao ar. Considerada ótima. Séries paradas: não informado.
+7. **"Para depois" e "parei de assistir":** os dois eram usados. O primeiro
+   para guardar algo e não esquecer; o segundo para séries que ficaram
+   chatas.
+8. **Reassistidas:** contavam no tempo total das estatísticas.
+9. **Notificações mantidas:** estreia e uma hora antes.
+10. **Telas pouco usadas:** rankings quase nunca. As outras telas sociais não
+    foram citadas.
+11. **Comentários:** não fizeram falta. Algo social só vale a pena se for
+    relevante e diferente do que o TV Time fazia.
+12. **Widget, importação da Netflix e listas personalizadas:** sem resposta;
+    uso não confirmado.
+
+Princípio declarado: manter o que era útil no TV Time, com uma repaginada, e
+mudar o que for necessário.
+
+### Perguntas ainda abertas
+
+- Ordem das abas e aba em que o app abria.
+- O que acontecia com séries paradas quando saía temporada nova.
+- Se a opção "nunca perguntar de novo" chegou a ser usada.
+- Uso real de widget, importação da Netflix e listas personalizadas.
+
+## Prioridades para o nosso app
+
+Insumo para a Fase 3, que é onde o escopo será decidido. Esta lista só
+organiza o que o relato e o mapa de telas indicam; não fecha a especificação.
+
+### Manter (com melhorias)
+
+- **Marcar com um toque na lista**, com animação de confirmação clara e
+  satisfatória. Feita do zero, com identidade própria, sem imitar a do
+  TV Time.
+- **Mais de um caminho para marcar:** na lista, na tela da série (episódio,
+  temporada, tudo) e na tela do episódio.
+- **Oferta de marcar os anteriores** ao marcar um episódio adiantado, numa
+  única ação. Melhoria possível: dar a opção de lembrar a escolha, em vez de
+  perguntar sempre.
+- **Confirmação leve depois de marcar**, sem empurrar telas extras. Desfazer
+  rápido na própria confirmação.
+- **Volta automática de séries com episódios novos**, com destaque visível
+  na lista.
+- **Notificações de estreia e de uma hora antes**, por série e no geral.
+- **Estados "para depois" e "parei de assistir"**, separados na lista.
+- **Reassistidas registradas e somadas às estatísticas de tempo.**
+- **Quatro abas:** Séries, Filmes, Busca e Perfil, com a busca como função
+  principal da terceira aba.
+
+### Melhorar
+
+- **Especiais (temporada 0) e OVAs atrapalham.** Ideia: deixá-los fora do
+  "próximo episódio" por padrão, numa seção recolhida da tela da série, com
+  uma opção por série para incluí-los. A marcação dos anteriores também não
+  deve pegar especiais sem pedir.
+- **Pergunta repetida sobre os anteriores.** Ideia: perguntar na primeira
+  vez e oferecer "fazer sempre assim", com ajuste nas configurações.
+- **Telas de detalhe carregadas de funções sociais.** Ideia: tela do
+  episódio e do filme focadas em marcar, nota opcional e onde assistir.
+- **Séries paradas e temporada nova (comportamento não confirmado).** Ideia:
+  não trazer de volta sozinha, mas mostrar um aviso discreto na seção de
+  paradas. A confirmar no passo 5.
+
+### Fora da primeira versão
+
+- Comentários, respostas, curtidas e denúncias.
+- Memes, GIFs, enquetes, quizzes e votação entre títulos.
+- Feed, grupos e tópicos.
+- Seguidores, perfil de outros usuários, compatibilidade e encontrar
+  amigos.
+- Conquistas, rankings e pontos.
+- Retrospectiva anual e compartilhamento para redes sociais.
+- Emoção e personagem favorito por episódio.
+
+Se algo social entrar mais tarde, precisa ser útil para o acompanhamento e
+diferente do que o TV Time fazia. Widget, importação e listas personalizadas
+ficam sem prioridade definida até haver confirmação de uso.
