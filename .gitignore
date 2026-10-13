@@ -1,0 +1,18 @@
+# APKs e artefatos de engenharia reversa nunca entram no repositório
+*.apk
+*.xapk
+*.apks
+*.aab
+*.jar
+*.dex
+*.smali
+
+# Dependências e builds
+node_modules/
+.expo/
+dist/
+
+# Segredos
+.env
+.env.*
+!.env.example
