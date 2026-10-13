@@ -4,7 +4,7 @@ App de acompanhamento de séries e filmes para Android e iOS, sucessor
 espiritual do TV Time (encerrado em 15/07/2026). Nome definitivo na Fase 3.
 
 ## Fase atual
-Fase 1: preparar o ambiente. Próxima: Fase 2, estudar o APK com o REA.
+Fase 2: estudar o APK com o REA. Fase 1 (ambiente) concluída em 13/10/2026.
 
 ## Stack
 - App: React Native + Expo (TypeScript)
