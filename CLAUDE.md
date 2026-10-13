@@ -37,3 +37,16 @@ Fase 2: estudar o APK com o REA. Fase 1 (ambiente) concluída em 13/10/2026.
   TheTVDB fora das APIs oficiais.
 - Cada análise vira uma nota em docs/estudo-apk/ com: pergunta, conclusão,
   evidência (nomes de classes e métodos, sem trechos de código) e limitações.
+
+## Roteiro da Fase 2 (revisado em 13/10/2026)
+Decisão: o TV Time 10.11 é Flutter. A lógica está em Dart compilado (libapp.so),
+que não será descompilado. Estratégia: observar e projetar.
+1. [feito] Origem do APK: docs/estudo-apk/00-origem-do-apk.md
+2. [feito] Framework: docs/estudo-apk/01-framework.md
+3. Integrações: deep links, widgets, notificações e permissões (REA no base.apk)
+4. Mapa de telas: nomes de arquivos em flutter_assets, deep links e lembranças de uso
+5. Funcionalidades e comportamento observado, incluindo a regra do "próximo
+   episódio", descritos em português a partir do uso do app e de material público
+6. Tom e textos em português (split_config.pt.apk), só como referência, sem copiar
+Fora do escopo: endpoints da Whip Media (usaremos TMDB e backend próprio) e
+modelo de dados do TV Time (o nosso será projetado na Fase 3).
