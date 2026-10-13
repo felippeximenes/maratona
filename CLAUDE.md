@@ -10,6 +10,7 @@ Fase 2: estudar o APK com o REA. Fase 1 (ambiente) concluída em 13/10/2026.
 - App: React Native + Expo (TypeScript)
 - Backend: Supabase (Postgres, autenticação, funções no servidor)
 - Dados de séries: API do TMDB, acessada só pelo backend
+- Horários e duração de episódios: TVmaze (CC BY-SA, com atribuição), acessado só pelo backend; aviso só por data quando faltar horário.
 - Ambiente: Windows + WSL2 (Ubuntu 24.04). Comandos sempre para o bash do Ubuntu.
 
 ## Estrutura
@@ -27,6 +28,8 @@ Fase 2: estudar o APK com o REA. Fase 1 (ambiente) concluída em 13/10/2026.
 5. Responder em português do Brasil. Código e identificadores em inglês.
 6. Preferir passos pequenos e testáveis.
 7. Quando faltar informação, perguntar antes de supor.
+8. TMDB é gratuito só para uso não comercial; se o app gerar receita, é preciso
+   licença comercial do TMDB (avaliar na Fase 3).
 
 ## REA (somente na fase de estudo)
 - Servidor MCP `rea`, registrado no escopo de usuário.

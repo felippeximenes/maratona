@@ -31,15 +31,15 @@ nada, a regra é uma proposta nossa e aparece como tal.
    episódio marcado**, e pode ser lembrada como "sempre marcar" ou "nunca
    marcar" (R8, R9).
 5. **Séries paradas não voltam sozinhas.** Ganham um aviso discreto na seção
-   de paradas, sem notificação (R14).
+   de paradas, sem notificação (R14, decisão 2).
 6. **Cada vez que se assiste algo vira um registro.** Desmarcar apaga
    registros; reassistir cria mais um. O tempo total soma todos os registros
    (R15 a R17, R24).
 7. **Para notificações com horário, a recomendação é usar o TVmaze como
    fonte complementar de horário, consultada só pelo backend**, e cair para
    aviso por data quando não houver horário. "Uma hora antes" só é enviada
-   quando o horário é conhecido (R20 a R23). Isso muda a stack e fica como
-   decisão em aberto.
+   quando o horário é conhecido (R20 a R23). Adotado (decisão 1); a stack do
+   CLAUDE.md foi atualizada.
 
 ## Definições
 
@@ -118,6 +118,9 @@ subseções de **Assistindo** na lista (R7).
 Remover tira a série da coleção e **apaga os registros de visualização dela**,
 depois de uma confirmação que diz quantos episódios e quantas horas saem das
 estatísticas. Quem quer guardar o histórico sem ver mais a série usa "parei".
+Depois de confirmada a remoção, a confirmação leve "Série removida ·
+Desfazer" fica na tela por alguns segundos (duração a definir na Fase 3).
+Até esse prazo acabar, "Desfazer" restaura tudo (decisão 5).
 
 **Exemplos.**
 - Dado uma série não adicionada. Quando o usuário toca em "Adicionar". Então
@@ -126,12 +129,18 @@ estatísticas. Quem quer guardar o histórico sem ver mais a série usa "parei".
 - Dado uma série com 40 episódios vistos (28 horas). Quando o usuário escolhe
   "Remover". Então aparece a confirmação "40 episódios e 28 h sairão das suas
   estatísticas. Para manter, use 'Parei de assistir'", com as duas opções.
+- Dado essa série removida há 2 segundos. Quando o usuário toca em
+  "Desfazer". Então a série volta com a mesma intenção, os 40 episódios
+  vistos e as 28 h nas estatísticas.
 
 **Casos-limite.**
 - Adicionar uma série já removida antes: começa do zero, porque o histórico
   foi apagado.
-- Desfazer logo após remover (na confirmação leve): restaura série,
-  intenção e registros.
+- Desfazer dentro do prazo restaura série, intenção, registros e as opções
+  da série (incluir especiais, notificações). Passado o prazo, a remoção é
+  definitiva.
+- O usuário sai da tela ou fecha o app antes do prazo acabar: a remoção vale
+  como confirmada.
 
 ### R3 – Mudanças de intenção feitas pelo usuário
 
@@ -192,7 +201,7 @@ Desmarcar nunca muda a intenção, só o progresso.
 primeiro episódio contável e exibido, **depois da fronteira**, que ainda não
 foi visto. Se nada foi visto, é o primeiro episódio contável exibido.
 Episódios não vistos *antes* da fronteira são tratados como pulados de
-propósito: não voltam a ser próximo. Na tela da série, a temporada mostra
+propósito: não voltam a ser próximo (decisão 4). Na tela da série, a temporada mostra
 quantos ficaram sem marcar, para quem quiser completar.
 
 Junto do próximo episódio, a lista mostra "+N", onde N é o número de
@@ -311,7 +320,7 @@ momento da marcação de E.
 ### R9 – Lembrar a escolha
 
 **Descrição.** Se "Lembrar minha escolha" estiver marcada, a resposta vira a
-regra **global** nas configurações, com três valores: **Perguntar**
+regra **global** nas configurações (decisão 3), com três valores: **Perguntar**
 (padrão), **Sempre marcar os anteriores** e **Nunca marcar os anteriores**.
 Com "sempre", o app marca sem perguntar e mostra a confirmação leve "Visto ·
 mais N anteriores · Desfazer". Com "nunca", marca só o episódio, sem aviso
@@ -424,7 +433,7 @@ episódio da série ou depois de 14 dias.
 
 ### R14 – Séries paradas e "para depois" com episódios novos
 
-**Descrição (proposta).** Séries **Paradas** não voltam sozinhas. Quando sai
+**Descrição (decisão 2).** Séries **Paradas** não voltam sozinhas. Quando sai
 episódio contável novo, ganham, só na seção de paradas, uma etiqueta
 discreta: **Temporada N disponível** (ou "Novos episódios"). Não há
 notificação. A etiqueta some quando o usuário retoma a série ou depois de 30
@@ -592,9 +601,10 @@ Brasil:
 | Custo e manutenção | Mais uma integração, sincronização e casamento de IDs que pode falhar | Tabela manual, com exceções sem fim (especiais, finais de temporada, mudanças de grade) | Nenhum |
 | Riscos | Dependência de terceiro; licença dos dados exige atribuição e tem cláusula de compartilhamento (a conferir) | Notificação no horário errado é pior que nenhuma | Perde a função "uma hora antes", que o relato valoriza |
 
-### Recomendação
+### Decisão
 
-**TVmaze como fonte complementar de horário, com queda para aviso por data.**
+**TVmaze como fonte complementar de horário, com queda para aviso por data**
+(decisão 1).
 O TMDB continua sendo a fonte principal de séries, episódios e imagens. O
 TVmaze entra só para dois dados por episódio: o momento exato de exibição e,
 se faltar no TMDB, a duração (R25). Tudo pelo backend, como já é com o
@@ -605,8 +615,8 @@ O horário padrão por emissora fica descartado: o relato diz que a "uma hora
 antes" chegava no horário, e uma tabela manual não sustentaria isso.
 
 Pontos de atenção: os identificadores do TheTVDB são usados só como chave de
-ligação, vindos do TMDB, sem acessar o TheTVDB; e essa escolha amplia a stack
-definida no CLAUDE.md, por isso está nas decisões em aberto.
+ligação, vindos do TMDB, sem acessar o TheTVDB; e a stack do CLAUDE.md já
+inclui o TVmaze (CC BY-SA, com atribuição).
 
 ### R20 – Momento de exibição
 
@@ -633,7 +643,8 @@ contrário, a do TMDB.
 - **Sem data:** nenhuma.
 
 Uma notificação por série por dia (R18, R19). Séries para depois e paradas
-não recebem (R3, R14).
+não recebem (R3, R14). Avisos que cairiam no horário silencioso são
+adiados, nunca descartados (R22).
 
 **Exemplos.**
 - Dado um episódio exato às 22h de Brasília e o usuário no Acre. Quando dá
@@ -657,11 +668,40 @@ informado" ao lado da data, para o usuário entender por que não recebeu.
   em 1 hora".
 
 **Casos-limite.**
-- **Horário silencioso (proposta):** entre 0h e 7h no fuso do usuário,
-  "uma hora antes" não é enviada (ficaria inútil depois), e a de estreia é
-  adiada para as 7h. Ajustável nas configurações.
 - Episódio marcado como visto antes da exibição (R10): nenhuma das duas
   notificações sai.
+
+### R22a – Horário silencioso
+
+**Descrição (decisão 6).** Ligado por padrão, de 0h a 7h no fuso do usuário.
+Início e fim são configuráveis, e o usuário pode desligá-lo. Nenhum aviso é
+descartado por cair nesse intervalo: todos são entregues no fim do horário
+silencioso (7h no padrão). Na entrega:
+- Avisos da mesma série viram um só, mantendo a regra de uma notificação por
+  série por dia (R21).
+- Se o episódio já foi ao ar, o "uma hora antes" não sai separado: vira o
+  aviso de estreia, com o horário em que foi ao ar ("S2E5 de X foi ao ar às
+  0h30").
+- Avisos de séries diferentes saem separados, uma notificação por série.
+
+**Exemplos.**
+- Dado um episódio exato à 1h de Brasília e o horário silencioso padrão.
+  Quando dá 7h. Então chega um só aviso: "S2E5 de X foi ao ar à 1h".
+- Dado um episódio exato às 7h30. Quando dá 7h. Então o "uma hora antes"
+  (que cairia às 6h30) chega às 7h, como "X começa às 7h30", e a de estreia
+  sai às 7h30, normalmente.
+- Dado o usuário com horário silencioso de 23h a 8h. Quando um aviso cairia
+  às 23h15. Então ele é entregue às 8h.
+
+**Casos-limite.**
+- O usuário marca o episódio como visto durante o horário silencioso: os
+  avisos pendentes dele são cancelados (R22).
+- O usuário põe a série em "para depois" ou "parei" antes da entrega: os
+  avisos pendentes são cancelados (R3).
+- Avisos "só data" às 10h (R21) ficam fora do intervalo padrão; só são
+  afetados se o usuário estender o horário silencioso até depois das 10h.
+- Horário do aparelho ou fuso muda durante o intervalo (viagem): a entrega
+  segue o fim do horário silencioso no fuso novo (R23).
 
 ### R23 – Fusos e datas mostradas
 
@@ -709,7 +749,7 @@ duração for corrigida no TMDB, o tempo total muda junto.
 
 **Descrição.** A duração usada é a primeira disponível nesta ordem:
 1. Duração do episódio no TMDB.
-2. Duração do episódio no TVmaze (se a integração for adotada).
+2. Duração do episódio no TVmaze.
 3. Média das durações conhecidas da mesma temporada.
 4. Duração típica da série informada no TMDB.
 5. Valor padrão: 40 minutos.
@@ -756,34 +796,32 @@ Nenhum código, texto ou recurso do TV Time foi usado. O APK não foi aberto.
   de sucesso no casamento de IDs.
 - **Números escolhidos sem dados:** 30 dias para "sem assistir há algum
   tempo", 14 e 30 dias para as etiquetas, 10h para aviso só por data, 40 e
-  100 minutos de duração padrão, horário silencioso de 0h a 7h. Todos são
-  ajustáveis.
+  100 minutos de duração padrão, horário silencioso de 0h a 7h (padrão
+  aprovado na decisão 6) e o prazo do "Desfazer" ao remover série (a definir).
+  Todos são ajustáveis.
 - **Fora desta nota:** filmes além de visto/reassistido/estatísticas, listas
   personalizadas, widget, importação e a ordem alternativa de episódios
   (ordem de DVD, absoluta) que o TMDB oferece para algumas séries.
 
-## Decisões em aberto para o Felippe
+## Decisões tomadas (13/10/2026)
 
-1. **Adotar o TVmaze como segunda fonte, só para horário e duração?** Isso
-   amplia a stack do CLAUDE.md.
-   *Recomendação:* sim, pelo backend, com atribuição nos créditos e queda
-   para aviso por data quando faltar horário. Sem isso, não há "uma hora
-   antes".
-2. **Séries paradas com temporada nova: etiqueta discreta, sem voltar e sem
-   notificação (R14)?**
-   *Recomendação:* sim. Respeita quem parou porque a série ficou chata.
-3. **"Lembrar minha escolha" dos anteriores vale para o app todo ou por
-   série?**
-   *Recomendação:* para o app todo, ajustável em Configurações. Por série
-   seria mais uma opção escondida para pouco ganho.
-4. **Próximo episódio depois da fronteira (pula buracos) ou o primeiro não
-   visto (volta aos buracos)?**
-   *Recomendação:* depois da fronteira (R5). Quem marca à frente e recusa os
-   anteriores quase sempre pulou de propósito.
-5. **Remover série apaga o histórico e tira as horas das estatísticas
-   (R2)?**
-   *Recomendação:* sim, com confirmação que mostra o que sai e sugere
-   "Parei de assistir" para manter.
-6. **Horário silencioso de 0h a 7h ligado por padrão (R22)?**
-   *Recomendação:* sim. Séries asiáticas e de madrugada gerariam avisos de
-   madrugada no Brasil.
+O Felippe aprovou as seis recomendações, com ajustes nas decisões 5 e 6.
+
+1. **TVmaze como segunda fonte, só para horário e duração:** aprovado. Pelo
+   backend, com atribuição nos créditos e queda para aviso por data quando
+   faltar horário. A stack do CLAUDE.md foi atualizada. Afeta a seção H e
+   R20 a R22a, R25.
+2. **Séries paradas com temporada nova:** etiqueta discreta, sem voltar
+   sozinha e sem notificação. Aprovado. Afeta R14.
+3. **"Lembrar minha escolha" dos anteriores:** vale para o app todo,
+   ajustável em Configurações. Aprovado. Afeta R9.
+4. **Próximo episódio:** o primeiro não visto depois da fronteira; buracos
+   antes dela não voltam. Aprovado. Afeta R5.
+5. **Remover série apaga o histórico e tira as horas das estatísticas:**
+   aprovado, com a confirmação que mostra o que sai e sugere "Parei de
+   assistir". **Ajuste:** depois de remover, o app oferece "Desfazer" por
+   alguns segundos. Afeta R2.
+6. **Horário silencioso de 0h a 7h ligado por padrão:** aprovado. **Ajuste:**
+   avisos que cairiam no horário silencioso não são descartados; são
+   entregues no fim dele (7h no padrão). Início e fim são configuráveis.
+   Afeta R21, R22 e R22a.
