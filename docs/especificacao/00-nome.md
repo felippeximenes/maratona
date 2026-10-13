@@ -18,20 +18,20 @@ registrar o que já foi visto.
 
 | Candidato | Motivo do descarte |
 |---|---|
-| Up Next | _a preencher_ |
-| NextEp | _a preencher_ |
-| Binge | _a preencher_ |
-| ShowPal | _a preencher_ |
-| Plotty | _a preencher_ |
-| Cliffy | _a preencher_ |
-| Arcly | _a preencher_ |
-| Tempora | _a preencher_ |
-| Noctora | _a preencher_ |
-| Rastra | _a preencher_ |
-| Plotbox | _a preencher_ |
-| Epibox | _a preencher_ |
-| Tapebox | _a preencher_ |
-| SeriesBox | _a preencher_ |
+| Up Next | App ativo de séries e filmes com o mesmo nome (Two Bit Labs, iPhone e Mac). |
+| NextEp | Rastreador de séries com o mesmo nome no iPhone. |
+| Binge | App de filmes e séries "Binge" no iPhone. |
+| ShowPal | App de séries integrado ao Trakt. |
+| Plotty | App "Plotty AI" (Entretenimento, 18+); plotty.app ocupado. |
+| Cliffy | cliffy.app é plataforma de microdramas (mesmo ramo). |
+| Arcly | arcly.com.br registrado em 25/09/2026 por terceiro. |
+| Tempora | Dois apps de produtividade com o mesmo nome (risco na classe 9). |
+| Noctora | App "Noctora: Sleep & Calm" nas duas lojas; noctora.com.br é empresa de segurança. |
+| Rastra | rastra.com.br é empresa de logística e TI; marca internacional de construção. |
+| Plotbox | Empresa de software para cemitérios (plotbox.com); "plot" = jazigo em inglês. |
+| Epibox | App EpiBOX no Google Play; epibox.com.br vende EPIs; "EPI" remete a equipamento de proteção. |
+| Tapebox | Livre, mas "tape" lembra fita adesiva em português. |
+| SeriesBox | Existiu o Seriebox (rastreador francês); "-box" associado a apps de pirataria; nome descritivo, fraco para marca. |
 
 ## Busca de marca no INPI
 
