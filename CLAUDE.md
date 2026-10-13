@@ -30,7 +30,7 @@ Fase 2: estudar o APK com o REA. Fase 1 (ambiente) concluída em 13/10/2026.
 
 ## REA (somente na fase de estudo)
 - Servidor MCP `rea`, registrado no escopo de usuário.
-- APK alvo: ~/estudo-tvtime/apk/tvtime.apk (universal; não split, XAPK ou AAB).
+- APK alvo: ~/estudo-tvtime/apk/tvtime.apk (base.apk do bundle 10.11.0; textos pt em apk/bundle/split_config.pt.apk).
 - Ferramentas: inspect_android_package, search_android_classes,
   inspect_android_class, inspect_android_method, trace_android_references.
 - Análise somente estática. Nunca acessar servidores da Whip Media ou do
