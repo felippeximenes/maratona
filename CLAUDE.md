@@ -8,7 +8,8 @@ docs/especificacao/00-nome.md.
 alterado agora.
 
 ## Fase atual
-Fase 3: especificação e nome. Fases 1 e 2 concluídas em 13/10/2026.
+Fase 4: construção. Marco atual: M0.
+Fases 1 e 2 concluídas em 13/10/2026; Fase 3 concluída em 14/10/2026.
 Escopo da v1 aprovado: docs/especificacao/01-escopo-v1.md
 Monetização decidida (Glowbox Premium): docs/especificacao/02-monetizacao.md
 Telas da v1 aprovadas: docs/especificacao/03-telas.md
