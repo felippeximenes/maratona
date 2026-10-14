@@ -9,6 +9,7 @@ alterado agora.
 
 ## Fase atual
 Fase 3: especificação e nome. Fases 1 e 2 concluídas em 13/10/2026.
+Escopo da v1 aprovado: docs/especificacao/01-escopo-v1.md
 
 ## Stack
 - App: React Native + Expo (TypeScript)
