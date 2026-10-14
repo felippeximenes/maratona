@@ -9,16 +9,17 @@ type Profile = { display_name: string | null };
 export default function ProfileScreen() {
   const isDark = useColorScheme() === 'dark';
   const color = isDark ? '#fff' : '#000';
-  const [profiles, setProfiles] = useState<Profile[] | null>(null);
+  const [profile, setProfile] = useState<Profile | null>(null);
 
   useEffect(() => {
-    // Sem filtro de propósito: o RLS deve devolver só a linha de quem está logado.
+    // O RLS só devolve a linha de quem está logado.
     supabase
       .from('profiles')
       .select('display_name')
+      .maybeSingle()
       .then(({ data, error }) => {
         if (error) console.warn('Failed to load profile', error);
-        setProfiles(data ?? []);
+        setProfile(data);
       });
   }, []);
 
@@ -31,11 +32,7 @@ export default function ProfileScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: isDark ? '#000' : '#fff' }]}>
-      <Text style={[styles.title, { color }]}>{profiles?.[0]?.display_name ?? 'Perfil'}</Text>
-
-      {__DEV__ && profiles && (
-        <Text style={{ color }}>Perfis visíveis: {profiles.length}</Text>
-      )}
+      <Text style={[styles.title, { color }]}>{profile?.display_name ?? 'Perfil'}</Text>
 
       <Pressable accessibilityRole="button" onPress={confirmSignOut} style={styles.button}>
         <Text style={styles.buttonText}>Sair</Text>

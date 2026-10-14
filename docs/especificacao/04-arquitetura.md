@@ -840,6 +840,13 @@ pelo Android; o iOS entra no M8 (decisão 1 da seção 7).
   erro; modo avião mostra a causa. Com uma segunda conta, conferir que os
   dados da primeira não aparecem.
 - **Cobre:** item 1 (parte: Google, sair); item 12 (Política na entrada).
+- **Concluído em 14/10/2026.** Login nativo do Google (token do Google
+  trocado por sessão no Supabase). Provisório até os marcos seguintes:
+  `profiles` só com `id`, `display_name`, `avatar_url`, `auth_provider` e
+  `created_at`, e só leitura da própria linha aberta no RLS; **Sair** fica
+  direto no **Perfil** até existir Configurações > Conta; a Política é uma
+  tela de rascunho dentro do app. O teste de RLS foi manual, com duas contas
+  (pendência 10 de `01-escopo-v1.md`).
 
 ### M2. Buscar e páginas (só leitura)
 
