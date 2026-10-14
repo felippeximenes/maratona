@@ -10,12 +10,14 @@ alterado agora.
 ## Fase atual
 Fase 3: especificação e nome. Fases 1 e 2 concluídas em 13/10/2026.
 Escopo da v1 aprovado: docs/especificacao/01-escopo-v1.md
+Monetização decidida (Glowbox Premium): docs/especificacao/02-monetizacao.md
 
 ## Stack
 - App: React Native + Expo (TypeScript)
 - Backend: Supabase (Postgres, autenticação, funções no servidor)
 - Dados de séries: API do TMDB, acessada só pelo backend
 - Horários e duração de episódios: TVmaze (CC BY-SA, com atribuição), acessado só pelo backend; aviso só por data quando faltar horário.
+- Pagamentos: assinatura Glowbox Premium por compra dentro do app nas lojas, via RevenueCat.
 - Ambiente: Windows + WSL2 (Ubuntu 24.04). Comandos sempre para o bash do Ubuntu.
 
 ## Estrutura
@@ -33,8 +35,7 @@ Escopo da v1 aprovado: docs/especificacao/01-escopo-v1.md
 5. Responder em português do Brasil. Código e identificadores em inglês.
 6. Preferir passos pequenos e testáveis.
 7. Quando faltar informação, perguntar antes de supor.
-8. TMDB é gratuito só para uso não comercial; se o app gerar receita, é preciso
-   licença comercial do TMDB (avaliar na Fase 3).
+8. Com o Premium, o app é uso comercial: licença comercial do TMDB obrigatória antes do lançamento.
 9. Credenciais de terceiros encontradas no APK (ex.: crowdin.yml) nunca são
    usadas, copiadas nem citadas.
 

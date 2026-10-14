@@ -667,18 +667,23 @@ Configurações:
   temporada contável) ou de uma série nova (S1E1).
 - **Episódio novo:** todos os episódios seguintes.
 
-Os dois vêm ligados por padrão. Cada tipo tem a opção "uma hora antes"
-(R22), também ligada por padrão, que soma um aviso ao da exibição (R21) e
-não o substitui. São quatro chaves independentes, mas a opção "uma hora
-antes" de um tipo desligado não sai.
+Os dois vêm ligados por padrão. Cada tipo tem duas opções independentes:
+o aviso na exibição (R21) e "uma hora antes" (R22), que soma um aviso ao da
+exibição e não o substitui. Padrões (ajuste de 13/10/2026): na **Estreia**,
+as duas ligadas; no **Episódio novo**, o aviso na exibição desligado (o "uma
+hora antes" já cobre) e o "uma hora antes" ligado. Com o tipo desligado,
+nenhuma das opções sai.
 
 **Exemplos.**
 - Dado os padrões e S3E1 de X às 22h. Quando dá 21h e depois 22h. Então
   chegam "X começa em 1 hora" e "Temporada 3 de X está no ar".
+- Dado os padrões e S3E2 de X às 22h. Quando dá 21h e depois 22h. Então
+  só chega "X começa em 1 hora", às 21h.
 - Dado **Episódio novo** desligado e **Estreia** ligado. Quando sai S3E2.
   Então nenhum aviso chega.
-- Dado **Episódio novo** ligado com "uma hora antes" desligado. Quando sai
-  S3E2 às 22h. Então só chega o aviso das 22h.
+- Dado **Episódio novo** ligado, com o aviso na exibição ligado e "uma
+  hora antes" desligado. Quando sai S3E2 às 22h. Então só chega o aviso das
+  22h.
 
 **Casos-limite.**
 - Vários episódios da mesma série no mesmo dia (R18, R19): o grupo vira um

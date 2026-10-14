@@ -10,7 +10,14 @@ Pontos em aberto resolvidos no mesmo dia:
 - **Avisos:** dois tipos separados, **Estreia** e **Episódio novo**, ligados
   por padrão, configuráveis um a um e cada um com **Lembrete 1 h antes**
   (ligado por padrão, somado ao aviso na hora). Item 9 e R21a da nota 04.
+  Ajuste de 13/10/2026: o aviso na hora do **Episódio novo** vem desligado
+  por padrão, porque o **Lembrete 1 h antes** já cobre; o da **Estreia**
+  continua ligado.
 - **Desfazer ao tirar série da coleção:** 6 segundos. Item 3 e R2.
+- **Monetização** (passo 3 da Fase 3): **Glowbox Premium** por assinatura
+  desde a v1; o núcleo continua gratuito. Listas personalizadas e widgets
+  saíram de "Fica para depois" e entraram na v1 (itens 13 a 16). Detalhes em
+  `02-monetizacao.md`.
 - **Pontos detalhados na Fase 3** (revogação do acesso na Apple, marcação
   otimista com reversão, reduzir movimento, página do filme, importação sem
   duplicar registros): aprovados como estão.
@@ -30,7 +37,10 @@ lá elas usam nomes de trabalho, aqui já aparecem com os termos do glossário
 - **Android e iOS juntos, com Expo.** Os testes no iOS exigem um iPhone; o
   build é feito na nuvem com EAS, sem Mac.
 - **Custos só na publicação:** Google Play, US$ 25 (uma vez); Apple
-  Developer, US$ 99 por ano.
+  Developer, US$ 99 por ano; licença comercial do TMDB (preço a saber).
+- **Núcleo gratuito.** Os itens 1 a 12 não têm limite nem cobrança. O
+  **Glowbox Premium** (itens 13 a 16) é vendido por assinatura dentro do
+  app, pelas lojas, via RevenueCat (`02-monetizacao.md`).
 - **Importação do TV Time é condicional:** só entra se o Felippe encontrar o
   arquivo de exportação e ele for legível.
 
@@ -50,9 +60,11 @@ Entrar com Google e com Apple, sair e excluir conta.
 - **Sair** encerra a sessão, apaga do aparelho os dados da conta e volta à
   tela de entrada. Entrar de novo com a mesma conta traz a coleção de volta.
 - **Excluir conta** fica em Configurações, pede confirmação com o verbo da
-  ação no botão ("Excluir") e apaga do backend a conta, a coleção, os
-  registros de visualização, as opções e os avisos agendados. Depois, entrar
-  com a mesma conta Google ou Apple começa do zero.
+  ação no botão ("Excluir") e apaga do backend a conta, a coleção, as
+  listas, os registros de visualização, as opções e os avisos agendados.
+  Depois, entrar com a mesma conta Google ou Apple começa do zero.
+- Com Premium ativo, a confirmação de **Excluir conta** avisa que a
+  assinatura continua na loja e oferece o atalho para cancelá-la lá.
 - Na exclusão de uma conta criada com Apple, o backend revoga o acesso do
   app junto à Apple (exigência da Apple para "Entrar com Apple").
 - Uma página web pública permite pedir a exclusão da conta e dos dados sem
@@ -199,19 +211,25 @@ Temporada 0 oculta por padrão, com opção por série.
 
 ### 9. Avisos
 
-Dois tipos, **Estreia** e **Episódio novo**, cada um com **Lembrete 1 h
-antes**, com horário do TVmaze, e horário silencioso com entrega às 7h.
+Dois tipos, **Estreia** e **Episódio novo**, cada um com aviso na hora e
+**Lembrete 1 h antes**, com horário do TVmaze, e horário silencioso com
+entrega às 7h.
 
 **Critérios de aceite**
 - **Estreia** avisa o primeiro episódio de uma temporada nova ou de uma série
   nova (T1 E1); **Episódio novo** avisa os episódios seguintes. Os dois tipos
-  vêm ligados por padrão, cada um com o **Lembrete 1 h antes** também ligado,
-  e os quatro podem ser ligados e desligados um a um em Configurações.
-- Com horário conhecido (TVmaze), o aviso chega no momento da exibição e,
-  com o lembrete ligado, também uma hora antes, ambos no fuso do aparelho.
-  Sem horário, só sai o **Aviso no dia** às 10h (do tipo do episódio, se
-  esse tipo estiver ligado), sem lembrete, e a página da série mostra
-  "horário não informado".
+  vêm ligados por padrão e podem ser ligados e desligados um a um em
+  Configurações.
+- Cada tipo tem duas opções, configuráveis uma a uma: aviso na hora e
+  **Lembrete 1 h antes**. Padrões: **Estreia** com as duas ligadas;
+  **Episódio novo** com o aviso na hora desligado e o **Lembrete 1 h antes**
+  ligado. Com o tipo desligado, nenhuma das duas sai.
+- Com horário conhecido (TVmaze), o aviso na hora chega no momento da
+  exibição e o lembrete uma hora antes, cada um se a opção estiver ligada,
+  ambos no fuso do aparelho. Sem horário, só sai o **Aviso no dia** às 10h
+  (do tipo do episódio, se esse tipo estiver ligado, com qualquer uma das
+  duas opções ligada), sem lembrete, e a página da série mostra "horário não
+  informado".
 - Sai no máximo um aviso por série por dia; lançamento em bloco gera um aviso
   só, com o número de episódios.
 - O horário silencioso vem ligado de 0h a 7h, configurável e desligável.
@@ -272,19 +290,110 @@ Créditos do TMDB e do TVmaze e política de privacidade.
 - A política de privacidade está publicada num endereço público, abre de
   dentro do app (tela de entrada e Configurações) e é o mesmo endereço
   informado nas duas lojas.
-- A política diz quais dados são guardados (conta, coleção, registros,
-  opções de aviso), com quem são compartilhados e como excluir a conta.
+- A política diz quais dados são guardados (conta, coleção, listas,
+  registros, opções de aviso, situação da assinatura), com quem são
+  compartilhados (incluindo RevenueCat e as lojas) e como excluir a conta.
+- Os Termos de uso estão publicados num endereço público e abrem da tela de
+  assinatura e de Configurações.
 
 **Regras R:** seção H da nota 04 (atribuição do TVmaze); regra 3 do
 CLAUDE.md (atribuição do TMDB).
+
+### 13. Listas personalizadas
+
+Listas criadas pelo usuário, com séries e filmes. Grátis até 3 listas
+(sugestão); sem limite no Premium.
+
+**Critérios de aceite**
+- O usuário cria, renomeia e apaga listas, cada uma com nome obrigatório.
+  Apagar pede confirmação com o verbo no botão ("Apagar") e não mexe na
+  coleção nem nos registros.
+- Séries e filmes entram e saem de uma lista pela página deles e pela busca;
+  o mesmo item pode estar em várias listas, e a ordem da lista pode ser
+  mudada arrastando.
+- Pôr um item numa lista não muda o estado dele nem o põe em **Minhas
+  séries**. **Quero ver** continua sendo um estado, não uma lista, e não
+  conta no limite.
+- No plano grátis, ao tentar criar a 4ª lista, o app explica o limite e
+  oferece o Premium; o backend recusa a criação mesmo que o app seja
+  burlado. Com o Premium desligado (plano B de `02-monetizacao.md`), o app
+  só explica o limite.
+- Quando o Premium acaba com mais de 3 listas, nenhuma é apagada (regra em
+  `02-monetizacao.md`, a confirmar).
+
+**Regras R:** nenhuma regra da nota 04 trata de listas; definido na Fase 3.
+
+### 14. Assinatura (Glowbox Premium)
+
+Planos mensal e anual pelas lojas, via RevenueCat.
+
+**Critérios de aceite**
+- A tela de assinatura mostra os dois planos com preço e período vindos da
+  loja, a renovação automática, como cancelar e os links para Termos de uso
+  e Política de privacidade, antes do botão de assinar.
+- Assinar abre a compra da loja (Apple ou Google Play); concluída a compra,
+  o Premium é liberado sem reiniciar o app e o backend registra a assinatura
+  pelo evento do RevenueCat.
+- **Restaurar compras** aparece na tela de assinatura e em Configurações e
+  devolve o Premium de uma compra feita com a mesma conta da loja.
+- O Premium vale em todos os aparelhos em que o usuário entra com a mesma
+  conta do Glowbox.
+- Configurações mostra o plano, a data da próxima renovação ou do fim, e um
+  atalho para gerenciar a assinatura na loja.
+- Renovação, cancelamento, fim e reembolso mudam o Premium no backend sem
+  ação do usuário.
+- Uma chave no backend desliga o Premium (plano B): a tela de assinatura e
+  os convites somem e valem os limites do plano grátis.
+
+**Regras R:** nenhuma; definido na Fase 3 (`02-monetizacao.md`).
+
+### 15. Temas e ícones (Premium)
+
+**Critérios de aceite**
+- O tema padrão (claro, escuro e automático, seguindo o aparelho) é
+  gratuito. Temas alternativos aparecem em Configurações e só podem ser
+  aplicados com Premium.
+- Trocar o tema muda todas as telas na hora, sem reiniciar o app, e a
+  escolha fica salva na conta.
+- Ícones alternativos podem ser escolhidos em Configurações, no Android e
+  no iOS; o novo ícone aparece na tela inicial do aparelho.
+- Todos os temas mantêm contraste legível nos textos e botões.
+- Quando o Premium acaba, tema e ícone voltam ao padrão na próxima abertura
+  do app.
+
+**Regras R:** nenhuma; definido na Fase 3.
+
+### 16. Widgets (Premium; pode ir para a v1.1)
+
+Widgets da **Fila** e da **Agenda** na tela inicial do aparelho. Exigem
+código nativo separado no Android e no iOS, integrado ao Expo por plugin de
+configuração. Se atrasarem, saem na v1.1 sem bloquear o lançamento.
+
+**Critérios de aceite**
+- Widget da **Fila**: mostra as primeiras séries da **Fila** com pôster e
+  "Próximo: T2 E5"; tocar numa série abre a página dela no app.
+- Widget da **Agenda**: mostra os próximos lançamentos com série, temporada,
+  número e data (e hora, quando conhecida), sem título nem resumo de
+  episódio (diretriz de voz 8).
+- Marcar episódios no app atualiza os widgets em até alguns minutos, sem
+  abrir o widget.
+- Sem Premium (ou depois que ele acaba), o widget mostra que é do Premium e
+  o toque abre a tela de assinatura.
+- Funciona no Android e no iOS, em pelo menos dois tamanhos.
+
+**Regras R:** R5, R6, R7 (Fila); R18, R19, R20, R23 (Agenda).
+
+## Ordem de construção
+
+Núcleo (itens 1 a 12) → listas (13) → assinatura (14) → temas e ícones (15)
+→ widgets (16). Widgets podem ir para uma v1.1 se atrasarem, sem bloquear o
+lançamento.
 
 ## Fica para depois
 
 | Item | Motivo |
 |---|---|
-| Widgets | Exigem código nativo separado no Android e no iOS, fora do que o Expo faz sozinho; a Fila no app cobre a mesma necessidade na v1. |
 | Onde assistir | Os dados de disponibilidade por serviço vêm de terceiros, com atribuição e termos próprios a avaliar; não fazem parte do núcleo de acompanhar. |
-| Listas personalizadas | Fora do núcleo; **Quero ver** cobre a lista de interesse mais comum. |
 | Estatísticas avançadas | Dependem de histórico acumulado; a marca "em lote" (R15) já prepara os dados para gráficos por período depois. |
 | Modo visitante | Com conta obrigatória, os dados ficam sempre no backend; um modo sem conta exigiria migrar dados do aparelho para a conta depois. |
 | Funções sociais (comentários, memes, grupos, rankings) | Exigem moderação, denúncia e bloqueio (regras das lojas para conteúdo de usuários), além de custo de servidor; não fazem parte do núcleo. |
@@ -294,10 +403,16 @@ CLAUDE.md (atribuição do TMDB).
 
 1. Registrar o domínio glowbox.app.br.
 2. Fazer o pedido de marca Glowbox no INPI, classe 9.
-3. Contratar a licença comercial do TMDB se o app gerar receita (regra 8 do
-   CLAUDE.md).
+3. Obter a licença comercial do TMDB, obrigatória com o Premium (regra 8
+   do CLAUDE.md). Plano B: lançar com o Premium desligado até a licença
+   ser resolvida (`02-monetizacao.md`).
 4. Criar as contas de desenvolvedor no Google Play (US$ 25, uma vez) e na
    Apple (US$ 99 por ano).
 5. Publicar a página web de exclusão de conta (exigência do Google Play;
    ver item 1) e informar o endereço dela na ficha do app no Google Play.
    Pode ficar em glowbox.app.br, mas não exige domínio próprio.
+6. Configurar os produtos de assinatura (mensal e anual) nas duas lojas e
+   no RevenueCat, e confirmar os preços (sugestão: R$ 6,90 por mês e
+   R$ 39,90 por ano).
+7. Publicar os Termos de uso num endereço público.
+8. Avaliar MEI ou contador quando houver receita.
