@@ -13,11 +13,16 @@ Pontos em aberto resolvidos no mesmo dia:
   Ajuste de 13/10/2026: o aviso na hora do **Episódio novo** vem desligado
   por padrão, porque o **Lembrete 1 h antes** já cobre; o da **Estreia**
   continua ligado.
-- **Desfazer ao tirar série da coleção:** 6 segundos. Item 3 e R2.
+- **Desfazer ao tirar série de Minhas séries:** 6 segundos. Item 3 e R2.
 - **Monetização** (passo 3 da Fase 3): **Glowbox Premium** por assinatura
-  desde a v1; o núcleo continua gratuito. Listas personalizadas e widgets
-  saíram de "Fica para depois" e entraram na v1 (itens 13 a 16). Detalhes em
+  desde a v1; o núcleo continua gratuito. Coleções (listas criadas pelo
+  usuário) e widgets saíram de "Fica para depois" e entraram na v1 (itens 13 a 16). Detalhes em
   `02-monetizacao.md`.
+- **Pontos em aberto da monetização:** preços, recursos do Premium, limite
+  de 3 coleções e fim do Premium aprovados; teste de 7 dias grátis só no
+  plano anual; as listas criadas pelo usuário se chamam **Coleções**, e a
+  ação de tirar de **Minhas séries** passa a ser **Tirar de Minhas séries**.
+  Detalhes em `02-monetizacao.md`.
 - **Pontos detalhados na Fase 3** (revogação do acesso na Apple, marcação
   otimista com reversão, reduzir movimento, página do filme, importação sem
   duplicar registros): aprovados como estão.
@@ -58,10 +63,10 @@ Entrar com Google e com Apple, sair e excluir conta.
   **Entrar com Apple**; as duas criam a conta no primeiro acesso e entram
   nela nos seguintes. Nenhuma outra tela do app abre sem conta.
 - **Sair** encerra a sessão, apaga do aparelho os dados da conta e volta à
-  tela de entrada. Entrar de novo com a mesma conta traz a coleção de volta.
+  tela de entrada. Entrar de novo com a mesma conta traz Minhas séries de volta.
 - **Excluir conta** fica em Configurações, pede confirmação com o verbo da
-  ação no botão ("Excluir") e apaga do backend a conta, a coleção, as
-  listas, os registros de visualização, as opções e os avisos agendados.
+  ação no botão ("Excluir") e apaga do backend a conta, Minhas séries,
+  as coleções, os registros de visualização, as opções e os avisos agendados.
   Depois, entrar com a mesma conta Google ou Apple começa do zero.
 - Com Premium ativo, a confirmação de **Excluir conta** avisa que a
   assinatura continua na loja e oferece o atalho para cancelá-la lá.
@@ -74,7 +79,7 @@ Entrar com Google e com Apple, sair e excluir conta.
   em glowbox.app.br, mas não exige domínio próprio.
 
 **Regras R:** nenhuma regra da nota 04 trata de conta. Excluir a conta
-equivale a tirar todas as séries da coleção (R2), sem "Desfazer".
+equivale a tirar todas as séries de Minhas séries (R2), sem "Desfazer".
 
 ### 2. Busca de séries e filmes
 
@@ -86,7 +91,7 @@ Pelo TMDB, sempre via backend.
 - Toda consulta ao TMDB passa pelo backend; o app não contém a chave do TMDB
   nem chama a API dele (regra 3 do CLAUDE.md).
 - Cada resultado mostra se já está em **Minhas séries** e permite
-  **Adicionar** direto da lista.
+  **Adicionar** direto dos resultados.
 - Sem internet ou com o backend fora do ar, a tela diz a causa e oferece
   "Tentar de novo" (diretriz de voz 3 da nota 05).
 
@@ -107,7 +112,7 @@ Temporadas, episódios e estados.
   cada marcação, mudança de estado ou atualização dos dados da série.
 - O usuário pode pôr a série em **Quero ver** ou **Larguei** e retomá-la; ao
   retomar, o próximo episódio continua de onde a fronteira estava.
-- **Tirar da coleção** pede confirmação com o número de episódios e de horas
+- **Tirar de Minhas séries** pede confirmação com o número de episódios e de horas
   que saem de **Seus números**, sugere **Larguei** para guardar o histórico e,
   depois de confirmado, oferece **Desfazer** por 6 segundos.
 
@@ -121,7 +126,7 @@ R14 (etiqueta em **Quero ver** e **Larguei**), R22 ("horário não informado").
 **Critérios de aceite**
 - A página mostra pôster, título, ano, duração e sinopse do TMDB, com os
   botões **Quero ver** e **Vi**.
-- **Quero ver** põe o filme na coleção sem registro; **Vi** cria um registro
+- **Quero ver** põe o filme em **Minhas séries** sem registro; **Vi** cria um registro
   de visualização e tira o filme de **Quero ver**.
 - Filme já visto oferece **Vi de novo** (mais um registro, selo **2×**) e
   **Desmarcar**.
@@ -176,7 +181,7 @@ Próximo episódio de cada série.
 
 ### 7. Agenda
 
-Próximos lançamentos das séries da coleção.
+Próximos lançamentos das séries de Minhas séries.
 
 **Critérios de aceite**
 - A **Agenda** lista episódios ainda não exibidos, com data, das séries
@@ -250,7 +255,7 @@ Horas vistas, episódios vistos e filmes vistos.
 - **Horas vistas** soma todos os registros, inclusive **Vi de novo** e
   marcações em grupo; **Episódios vistos** e **Filmes vistos** contam itens
   distintos com pelo menos um registro.
-- Marcar, desmarcar ou **Tirar da coleção** muda os números na próxima vez
+- Marcar, desmarcar ou **Tirar de Minhas séries** muda os números na próxima vez
   que a tela abre, sem ação manual.
 - Quando durações estimadas passam de 10% do total, as horas aparecem como
   "aproximado".
@@ -290,7 +295,7 @@ Créditos do TMDB e do TVmaze e política de privacidade.
 - A política de privacidade está publicada num endereço público, abre de
   dentro do app (tela de entrada e Configurações) e é o mesmo endereço
   informado nas duas lojas.
-- A política diz quais dados são guardados (conta, coleção, listas,
+- A política diz quais dados são guardados (conta, Minhas séries, coleções,
   registros, opções de aviso, situação da assinatura), com quem são
   compartilhados (incluindo RevenueCat e as lojas) e como excluir a conta.
 - Os Termos de uso estão publicados num endereço público e abrem da tela de
@@ -299,29 +304,31 @@ Créditos do TMDB e do TVmaze e política de privacidade.
 **Regras R:** seção H da nota 04 (atribuição do TVmaze); regra 3 do
 CLAUDE.md (atribuição do TMDB).
 
-### 13. Listas personalizadas
+### 13. Coleções
 
-Listas criadas pelo usuário, com séries e filmes. Grátis até 3 listas
-(sugestão); sem limite no Premium.
+Coleções criadas pelo usuário, com séries e filmes, na tela **Minhas
+coleções**. Grátis até 3 coleções; sem limite no Premium.
 
 **Critérios de aceite**
-- O usuário cria, renomeia e apaga listas, cada uma com nome obrigatório.
-  Apagar pede confirmação com o verbo no botão ("Apagar") e não mexe na
-  coleção nem nos registros.
-- Séries e filmes entram e saem de uma lista pela página deles e pela busca;
-  o mesmo item pode estar em várias listas, e a ordem da lista pode ser
-  mudada arrastando.
-- Pôr um item numa lista não muda o estado dele nem o põe em **Minhas
-  séries**. **Quero ver** continua sendo um estado, não uma lista, e não
-  conta no limite.
-- No plano grátis, ao tentar criar a 4ª lista, o app explica o limite e
+- **Nova coleção** cria uma coleção com nome obrigatório; o usuário também
+  renomeia e apaga coleções. Apagar pede confirmação com o verbo no botão
+  ("Apagar") e não mexe em **Minhas séries** nem nos registros.
+- Séries e filmes entram numa coleção pela página deles e pela busca, e
+  saem por **Tirar desta coleção**; o mesmo item pode estar em várias
+  coleções, e a ordem da coleção pode ser mudada arrastando.
+- Pôr um item numa coleção não muda o estado dele nem o põe em **Minhas
+  séries**, e **Tirar desta coleção** não o tira de **Minhas séries** nem
+  apaga registros. **Quero ver** continua sendo um estado, não uma coleção,
+  e não conta no limite.
+- No plano grátis, ao tentar criar a 4ª coleção, o app explica o limite e
   oferece o Premium; o backend recusa a criação mesmo que o app seja
   burlado. Com o Premium desligado (plano B de `02-monetizacao.md`), o app
   só explica o limite.
-- Quando o Premium acaba com mais de 3 listas, nenhuma é apagada (regra em
-  `02-monetizacao.md`, a confirmar).
+- Quando o Premium acaba, nenhuma coleção é apagada: todas continuam
+  visíveis e editáveis, e criar coleção nova fica bloqueado enquanto houver
+  3 ou mais (`02-monetizacao.md`).
 
-**Regras R:** nenhuma regra da nota 04 trata de listas; definido na Fase 3.
+**Regras R:** nenhuma regra da nota 04 trata de coleções; definido na Fase 3.
 
 ### 14. Assinatura (Glowbox Premium)
 
@@ -334,6 +341,10 @@ Planos mensal e anual pelas lojas, via RevenueCat.
 - Assinar abre a compra da loja (Apple ou Google Play); concluída a compra,
   o Premium é liberado sem reiniciar o app e o backend registra a assinatura
   pelo evento do RevenueCat.
+- O plano anual mostra "7 dias grátis", com o preço cobrado depois e a data
+  da primeira cobrança, só para quem a loja diz que ainda tem direito ao
+  teste; o mensal não tem teste. Cancelar durante o teste não gera cobrança
+  e o Premium acaba no fim dos 7 dias.
 - **Restaurar compras** aparece na tela de assinatura e em Configurações e
   devolve o Premium de uma compra feita com a mesma conta da loja.
 - O Premium vale em todos os aparelhos em que o usuário entra com a mesma
@@ -385,7 +396,7 @@ configuração. Se atrasarem, saem na v1.1 sem bloquear o lançamento.
 
 ## Ordem de construção
 
-Núcleo (itens 1 a 12) → listas (13) → assinatura (14) → temas e ícones (15)
+Núcleo (itens 1 a 12) → coleções (13) → assinatura (14) → temas e ícones (15)
 → widgets (16). Widgets podem ir para uma v1.1 se atrasarem, sem bloquear o
 lançamento.
 
@@ -411,8 +422,8 @@ lançamento.
 5. Publicar a página web de exclusão de conta (exigência do Google Play;
    ver item 1) e informar o endereço dela na ficha do app no Google Play.
    Pode ficar em glowbox.app.br, mas não exige domínio próprio.
-6. Configurar os produtos de assinatura (mensal e anual) nas duas lojas e
-   no RevenueCat, e confirmar os preços (sugestão: R$ 6,90 por mês e
-   R$ 39,90 por ano).
+6. Configurar os produtos de assinatura nas duas lojas e no RevenueCat,
+   com os preços aprovados (R$ 6,90 por mês e R$ 39,90 por ano) e o teste
+   de 7 dias grátis só no anual.
 7. Publicar os Termos de uso num endereço público.
 8. Avaliar MEI ou contador quando houver receita.

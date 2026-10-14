@@ -189,8 +189,8 @@ operacional. Um conceito, um termo, em todas as telas.
 
 | Conceito | Nosso termo | Justificativa |
 |---|---|---|
-| Coleção do usuário | **Minhas séries** | Direto, sem jargão; aba e título da tela. |
-| Adicionar / remover | **Adicionar** / **Tirar da coleção** | "Adicionar" é verbo comum, não tem alternativa melhor. "Tirar" é mais coloquial que "remover". |
+| Acervo do usuário (séries e filmes acompanhados) | **Minhas séries** | Direto, sem jargão; aba e título da tela. |
+| Adicionar / remover | **Adicionar** / **Tirar de Minhas séries** | "Adicionar" é verbo comum, não tem alternativa melhor. "Tirar" é mais coloquial que "remover". Decisão do Felippe em 13/10/2026: antes era "Tirar da coleção"; mudou para não colidir com **Coleções**. Tem 4 palavras, exceção aceita à diretriz 2, porque a ação apaga números e não pode ser confundida com **Tirar desta coleção**. |
 | Ainda não começou (subseção) | **Para começar** | Soa como convite, não como falta. |
 | Assistindo | **Vendo** | Mais curto e mais falado no Brasil; cabe em selo pequeno. |
 | Em dia | **Aguardando** | Diz o que está acontecendo (esperando episódio novo) em vez de um jargão de controle. |
@@ -209,6 +209,8 @@ operacional. Um conceito, um termo, em todas as telas.
 | Temporada / episódio | **Temporada**, **Episódio**; abreviação **T2 E5** | Vocabulário comum, sem alternativa melhor. Sem zero à esquerda e com espaço, mais legível. |
 | Estatísticas | **Seus números**; métricas **Horas vistas**, **Episódios vistos** | Mais pessoal que o termo técnico e sem trocadilho de marca. |
 | Notificações | **Notificações** (tipos: **Estreia**, **Episódio novo**, **Lembrete 1 h antes**, **Aviso no dia**) | Termo do sistema operacional; trocar confundiria. Os tipos seguem as regras R21, R21a e R22 da nota 04. |
+| Listas criadas pelo usuário | **Coleção** / **Coleções**; tela **Minhas coleções**; ações **Nova coleção** e **Tirar desta coleção** | Decisão do Felippe em 13/10/2026. Soa como acervo pessoal e combina com o nome do app. **Tirar desta coleção** só tira o item daquela coleção, sem mexer em **Minhas séries** nem nos registros. **Quero ver** é estado, não coleção. |
+| Assinatura | **Glowbox Premium** (no texto corrido, **Premium**); botões **Assinar** e **Restaurar compras** | Decisão do Felippe em 13/10/2026. "Assinar" é o verbo comum de assinatura; "Restaurar compras" é o termo que as lojas usam e que a Apple exige. |
 | Nota / resenha | **Nota** e **Comentário** | Separa o que o TV Time juntava em "avaliação" (se houver comentários no nosso app). |
 
 ### Equivalência com a nota 04

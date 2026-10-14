@@ -42,7 +42,9 @@ Monetização decidida (Glowbox Premium): docs/especificacao/02-monetizacao.md
 ## Glossário
 Termos oficiais do app (detalhes e justificativas em
 docs/estudo-apk/05-tom-e-textos.md; um termo por conceito):
-- Coleção: Minhas séries. Ações: Adicionar, Tirar da coleção.
+- Acervo: Minhas séries. Ações: Adicionar, Tirar de Minhas séries.
+- Coleções (listas do usuário): Coleção, Minhas coleções, Nova coleção,
+  Tirar desta coleção.
 - Estados: Vendo, Aguardando, Concluída, Quero ver, Larguei.
 - Subseções: Para começar, Faz tempo.
 - Listas: Fila (próximo episódio), Agenda (estreias).
@@ -51,6 +53,7 @@ docs/estudo-apk/05-tom-e-textos.md; um termo por conceito):
 - Produção: Em produção, Fim da série, Cancelada.
 - Estatísticas: Seus números (Horas vistas, Episódios vistos).
 - Notificações: Estreia, Episódio novo, Lembrete 1 h antes, Aviso no dia.
+- Assinatura: Glowbox Premium (Premium), Assinar, Restaurar compras.
 
 ## REA (somente na fase de estudo)
 - Servidor MCP `rea`, registrado no escopo de usuário.
