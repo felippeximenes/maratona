@@ -445,3 +445,8 @@ lançamento.
 8. Avaliar MEI ou contador quando houver receita.
 9. Criar e-mail dedicado do Glowbox (gratuito, por exemplo um Gmail próprio
    do app), usado na página de exclusão e na política de privacidade.
+10. Instalar o Docker no ambiente de desenvolvimento e ligar o teste
+    automático de RLS (uma segunda conta de teste não enxerga nada da
+    primeira; seção "Row Level Security" de `04-arquitetura.md`). Decisão de
+    14/10/2026: até lá, o teste de RLS é manual, com uma segunda conta Google
+    no aparelho, a partir do M1.

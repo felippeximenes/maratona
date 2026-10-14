@@ -8,7 +8,7 @@ docs/especificacao/00-nome.md.
 alterado agora.
 
 ## Fase atual
-Fase 4: construção. Marco atual: M0.
+Fase 4: construção. Marco atual: M1 (M0 concluído em 14/10/2026).
 Fases 1 e 2 concluídas em 13/10/2026; Fase 3 concluída em 14/10/2026.
 Escopo da v1 aprovado: docs/especificacao/01-escopo-v1.md
 Monetização decidida (Glowbox Premium): docs/especificacao/02-monetizacao.md
@@ -43,6 +43,7 @@ Arquitetura e modelo de dados aprovados: docs/especificacao/04-arquitetura.md
 8. Com o Premium, o app é uso comercial: licença comercial do TMDB obrigatória antes do lançamento.
 9. Credenciais de terceiros encontradas no APK (ex.: crowdin.yml) nunca são
    usadas, copiadas nem citadas.
+10. Commits e PRs sem atribuição ao Claude (sem Co-Authored-By nem Generated with).
 
 ## Glossário
 Termos oficiais do app (detalhes e justificativas em

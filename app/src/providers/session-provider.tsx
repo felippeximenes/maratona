@@ -1,0 +1,26 @@
+import type { Session } from '@supabase/supabase-js';
+import { createContext, use, useEffect, useState, type ReactNode } from 'react';
+
+import { supabase } from '@/lib/supabase';
+
+type SessionState = { session: Session | null; isLoading: boolean };
+
+const SessionContext = createContext<SessionState>({ session: null, isLoading: true });
+
+export function SessionProvider({ children }: { children: ReactNode }) {
+  const [state, setState] = useState<SessionState>({ session: null, isLoading: true });
+
+  useEffect(() => {
+    // Também dispara INITIAL_SESSION com a sessão guardada no aparelho.
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      setState({ session, isLoading: false });
+    });
+    return () => data.subscription.unsubscribe();
+  }, []);
+
+  return <SessionContext value={state}>{children}</SessionContext>;
+}
+
+export function useSession() {
+  return use(SessionContext);
+}
