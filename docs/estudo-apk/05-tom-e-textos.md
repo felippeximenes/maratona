@@ -189,8 +189,8 @@ operacional. Um conceito, um termo, em todas as telas.
 
 | Conceito | Nosso termo | Justificativa |
 |---|---|---|
-| Acervo do usuário (séries e filmes acompanhados) | **Minhas séries** | Direto, sem jargão; aba e título da tela. |
-| Adicionar / remover | **Adicionar** / **Tirar de Minhas séries** | "Adicionar" é verbo comum, não tem alternativa melhor. "Tirar" é mais coloquial que "remover". Decisão do Felippe em 13/10/2026: antes era "Tirar da coleção"; mudou para não colidir com **Coleções**. Tem 4 palavras, exceção aceita à diretriz 2, porque a ação apaga números e não pode ser confundida com **Tirar desta coleção**. |
+| Acervo do usuário | **Minhas séries** (séries, na aba Séries) e **Meus filmes** (filmes, na aba Filmes) | Direto, sem jargão. Decisão do Felippe em 13/10/2026: o acervo é separado por aba, para que "Minhas séries" não precise conter filmes. |
+| Adicionar / remover | **Adicionar** / **Tirar de Minhas séries** e **Tirar de Meus filmes** | "Adicionar" é verbo comum, não tem alternativa melhor. "Tirar" é mais coloquial que "remover". Decisão do Felippe em 13/10/2026: antes era "Tirar da coleção"; mudou para não colidir com **Coleções**, e ganhou a forma de filmes quando o acervo foi separado por aba. Têm 4 palavras, exceção aceita à diretriz 2, porque a ação apaga números e não pode ser confundida com **Tirar desta coleção**. |
 | Ainda não começou (subseção) | **Para começar** | Soa como convite, não como falta. |
 | Assistindo | **Vendo** | Mais curto e mais falado no Brasil; cabe em selo pequeno. |
 | Em dia | **Aguardando** | Diz o que está acontecendo (esperando episódio novo) em vez de um jargão de controle. |
@@ -198,8 +198,11 @@ operacional. Um conceito, um termo, em todas as telas.
 | Para depois | **Quero ver** | Primeira pessoa, natural, e serve também para filmes (substitui lista de interesse). Um único nome em botão, estado e seção. |
 | Parei | **Larguei** (estado, botão e seção) | Decisão do Felippe: coloquial, primeira pessoa, combina com "Quero ver" e "Vi". "Pausada" foi descartada porque sugere volta automática, que a regra R14 não faz; "Abandonada" soava negativa. |
 | Sem ver há tempo (subseção) | **Faz tempo** | Curto para cabeçalho; o contexto da lista explica o resto. |
+| Voltar a acompanhar (sair de **Quero ver** ou **Larguei**) | **Retomar** | Decisão do Felippe em 13/10/2026. Verbo curto; diz que a série continua de onde parou (R3). |
 | Status de produção | **Em produção**, **Fim da série**, **Cancelada** | Separa "acabou como planejado" de "foi cancelada", o que o TMDB permite. |
 | Marcar visto | **Vi** (botão de check) / **Visto** (estado) | Uma sílaba no botão; "visto" evita a regência de "assistir a". |
+| Filmes com registro (visão da aba Filmes) | **Vistos** | Decisão do Felippe em 13/10/2026. Plural de **Visto**; não cria conceito novo. |
+| Recusar convite ou pedido sem fechar a porta | **Agora não** | Decisão do Felippe em 13/10/2026. Usado no primeiro acesso (avisos, importação); não culpa e deixa claro que dá para fazer depois. |
 | Desmarcar | **Desmarcar** | Termo de sistema, claro. |
 | Reassistir | **Vi de novo** / selo **2×** | Mais natural que um verbo com prefixo; o selo numérico mostra quantas vezes. |
 | Marcar tudo / anteriores | **Marcar temporada** / **Marcar anteriores** | Diz o alcance da ação sem frase longa. |
@@ -209,8 +212,14 @@ operacional. Um conceito, um termo, em todas as telas.
 | Temporada / episódio | **Temporada**, **Episódio**; abreviação **T2 E5** | Vocabulário comum, sem alternativa melhor. Sem zero à esquerda e com espaço, mais legível. |
 | Estatísticas | **Seus números**; métricas **Horas vistas**, **Episódios vistos** | Mais pessoal que o termo técnico e sem trocadilho de marca. |
 | Notificações | **Notificações** (tipos: **Estreia**, **Episódio novo**, **Lembrete 1 h antes**, **Aviso no dia**) | Termo do sistema operacional; trocar confundiria. Os tipos seguem as regras R21, R21a e R22 da nota 04. |
-| Listas criadas pelo usuário | **Coleção** / **Coleções**; tela **Minhas coleções**; ações **Nova coleção** e **Tirar desta coleção** | Decisão do Felippe em 13/10/2026. Soa como acervo pessoal e combina com o nome do app. **Tirar desta coleção** só tira o item daquela coleção, sem mexer em **Minhas séries** nem nos registros. **Quero ver** é estado, não coleção. |
+| Listas criadas pelo usuário | **Coleção** / **Coleções**; tela **Minhas coleções**; ações **Nova coleção**, **Salvar em coleção** e **Tirar desta coleção** | Decisão do Felippe em 13/10/2026. Soa como acervo pessoal e combina com o nome do app. **Salvar em coleção** é o botão que põe a série ou o filme numa coleção (decisão do Felippe em 13/10/2026); "Salvar" evita repetir "Adicionar", que é a ação do acervo. **Tirar desta coleção** só tira o item daquela coleção, sem mexer em **Minhas séries**, em **Meus filmes** nem nos registros. **Quero ver** é estado, não coleção. |
 | Assinatura | **Glowbox Premium** (no texto corrido, **Premium**); botões **Assinar** e **Restaurar compras** | Decisão do Felippe em 13/10/2026. "Assinar" é o verbo comum de assinatura; "Restaurar compras" é o termo que as lojas usam e que a Apple exige. |
+| Abas da barra inferior | **Séries**, **Filmes**, **Buscar**, **Perfil** | Decisão do Felippe em 13/10/2026 (`docs/especificacao/03-telas.md`). Vocabulário comum; **Buscar** é verbo porque a aba é uma ação. |
+| Série que voltou com episódio novo / etiqueta de série em **Quero ver** ou **Larguei** | **Novos episódios** / **Temporada N disponível** | Decisão do Felippe em 13/10/2026. Já usados no escopo e nas regras R13 e R14. |
+| Botão que abre o pedido de notificação | **Ativar avisos** | Decisão do Felippe em 13/10/2026. Verbo da ação no botão (diretriz 1). |
+| Trazer histórico de outro app | **Importar histórico** | Decisão do Felippe em 13/10/2026. Não cita o app de origem (regra 2 do CLAUDE.md). |
+| Seções de Configurações | **Avisos**, **Marcar anteriores**, **Aparência**, **Assinatura**, **Conta**, **Sobre**; em Sobre, **Créditos** | Decisão do Felippe em 13/10/2026. Rótulos comuns de sistema. |
+| Atalho para a assinatura na loja | **Gerenciar assinatura** | Decisão do Felippe em 13/10/2026. Diz que a ação acontece na loja, não no app. |
 | Nota / resenha | **Nota** e **Comentário** | Separa o que o TV Time juntava em "avaliação" (se houver comentários no nosso app). |
 
 ### Equivalência com a nota 04
@@ -260,7 +269,9 @@ troca nos textos será feita na especificação da Fase 3, seguindo esta tabela.
    conquista. Piada que depende de inglês não entra.
 8. **Spoiler é sagrado.** Notificação e lista nunca mostram título nem
    resumo de episódio que a pessoa não viu; mostrar só série, temporada e
-   número.
+   número. Decisão do Felippe em 13/10/2026: a página da série também
+   esconde título e resumo de episódio não visto; só a tela do episódio
+   oferece mostrar mesmo assim.
 
 ## Limitações
 

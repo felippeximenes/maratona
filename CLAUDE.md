@@ -11,6 +11,7 @@ alterado agora.
 Fase 3: especificação e nome. Fases 1 e 2 concluídas em 13/10/2026.
 Escopo da v1 aprovado: docs/especificacao/01-escopo-v1.md
 Monetização decidida (Glowbox Premium): docs/especificacao/02-monetizacao.md
+Telas da v1 aprovadas: docs/especificacao/03-telas.md
 
 ## Stack
 - App: React Native + Expo (TypeScript)
@@ -42,18 +43,25 @@ Monetização decidida (Glowbox Premium): docs/especificacao/02-monetizacao.md
 ## Glossário
 Termos oficiais do app (detalhes e justificativas em
 docs/estudo-apk/05-tom-e-textos.md; um termo por conceito):
-- Acervo: Minhas séries. Ações: Adicionar, Tirar de Minhas séries.
+- Acervo: Minhas séries (aba Séries) e Meus filmes (aba Filmes). Ações:
+  Adicionar, Tirar de Minhas séries, Tirar de Meus filmes, Retomar.
 - Coleções (listas do usuário): Coleção, Minhas coleções, Nova coleção,
-  Tirar desta coleção.
+  Salvar em coleção, Tirar desta coleção.
 - Estados: Vendo, Aguardando, Concluída, Quero ver, Larguei.
 - Subseções: Para começar, Faz tempo.
 - Listas: Fila (próximo episódio), Agenda (estreias).
-- Marcar: Vi (botão), Visto (estado), Vi de novo, Marcar anteriores, Marcar temporada.
+- Marcar: Vi (botão), Visto (estado), Vistos (filmes), Vi de novo, Marcar anteriores, Marcar temporada.
 - Temporada 0: Extras (opção Incluir extras). Abreviação: T2 E5.
 - Produção: Em produção, Fim da série, Cancelada.
 - Estatísticas: Seus números (Horas vistas, Episódios vistos).
 - Notificações: Estreia, Episódio novo, Lembrete 1 h antes, Aviso no dia.
-- Assinatura: Glowbox Premium (Premium), Assinar, Restaurar compras.
+- Assinatura: Glowbox Premium (Premium), Assinar, Restaurar compras,
+  Gerenciar assinatura.
+- Abas: Séries, Filmes, Buscar, Perfil.
+- Destaques: Novos episódios, Temporada N disponível.
+- Primeiro acesso: Ativar avisos, Agora não, Importar histórico.
+- Configurações: Avisos, Marcar anteriores, Aparência, Assinatura, Conta,
+  Sobre (Créditos).
 
 ## REA (somente na fase de estudo)
 - Servidor MCP `rea`, registrado no escopo de usuário.

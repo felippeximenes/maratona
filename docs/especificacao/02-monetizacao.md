@@ -16,7 +16,9 @@ Pontos em aberto resolvidos no mesmo dia:
   introdutória das lojas; o mensal não tem teste (seção "Teste grátis").
 - **Listas criadas pelo usuário** passam a se chamar **Coleções**. Para não
   colidir com o termo, a ação que tira uma série ou filme de **Minhas
-  séries** passa a ser **Tirar de Minhas séries**. Glossário atualizado em
+  séries** passa a ser **Tirar de Minhas séries**. Ajuste de 13/10/2026
+  (`03-telas.md`): o acervo foi separado por aba, e filmes ficam em **Meus
+  filmes**, com a ação **Tirar de Meus filmes**. Glossário atualizado em
   `docs/estudo-apk/05-tom-e-textos.md` (seção 4).
 
 ## Preços
@@ -52,7 +54,7 @@ R$ 33,92 por ano do anual, antes de impostos e da taxa do RevenueCat.
 
 | Recurso | Grátis | Premium |
 |---|---|---|
-| Núcleo (Minhas séries, marcar, Fila, Agenda, avisos, Seus números, importação) | Sim, sem limite | Sim |
+| Núcleo (Minhas séries, Meus filmes, marcar, Fila, Agenda, avisos, Seus números, importação) | Sim, sem limite | Sim |
 | Coleções | Até 3 coleções | Sem limite |
 | Temas | Tema padrão (claro, escuro e automático) | Temas alternativos |
 | Ícone do app | Ícone padrão | Ícones alternativos |
