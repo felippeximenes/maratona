@@ -12,6 +12,7 @@ Fase 3: especificação e nome. Fases 1 e 2 concluídas em 13/10/2026.
 Escopo da v1 aprovado: docs/especificacao/01-escopo-v1.md
 Monetização decidida (Glowbox Premium): docs/especificacao/02-monetizacao.md
 Telas da v1 aprovadas: docs/especificacao/03-telas.md
+Arquitetura e modelo de dados aprovados: docs/especificacao/04-arquitetura.md
 
 ## Stack
 - App: React Native + Expo (TypeScript)
@@ -25,6 +26,8 @@ Telas da v1 aprovadas: docs/especificacao/03-telas.md
 - docs/estudo-apk/: notas da Fase 2 (descrições em português, sem código descompilado)
 - docs/especificacao/: especificação da Fase 3
 - app/ e supabase/: criados na Fase 4
+- core/: regras do app (regras R) em TypeScript puro, usadas pelo app e
+  pelas Edge Functions; criada na Fase 4 (docs/especificacao/04-arquitetura.md)
 - O APK e as saídas brutas do REA ficam FORA do repositório, em ~/estudo-tvtime/
 
 ## Regras

@@ -46,8 +46,11 @@ lá elas usam nomes de trabalho, aqui já aparecem com os termos do glossário
   Play, também por uma página web, sem abrir o app.
 - **Android e iOS juntos, com Expo.** Os testes no iOS exigem um iPhone; o
   build é feito na nuvem com EAS, sem Mac.
-- **Custos só na publicação:** Google Play, US$ 25 (uma vez); Apple
-  Developer, US$ 99 por ano; licença comercial do TMDB (preço a saber).
+- **Custos ao longo da construção** (ajuste de 14/10/2026,
+  `04-arquitetura.md`): Google Play (US$ 25, uma vez) no marco da
+  assinatura; Apple (US$ 99 por ano) no M8; Supabase Pro (cerca de US$ 25
+  por mês) a partir do lançamento público. Licença comercial do TMDB
+  (preço a saber) antes do lançamento com Premium.
 - **Núcleo gratuito.** Os itens 1 a 12 não têm limite nem cobrança. O
   **Glowbox Premium** (itens 13 a 16) é vendido por assinatura dentro do
   app, pelas lojas, via RevenueCat (`02-monetizacao.md`).
@@ -81,8 +84,10 @@ Entrar com Google e com Apple, sair e excluir conta.
 - Uma página web pública permite pedir a exclusão da conta e dos dados sem
   abrir o app (exigência do Google Play). A página cita o nome do app ou do
   desenvolvedor como aparece na loja, explica o que é apagado e como fazer o
-  pedido, e o endereço dela é o mesmo informado no Google Play. Pode ficar
-  em glowbox.app.br, mas não exige domínio próprio.
+  pedido, e o endereço dela é o mesmo informado no Google Play. Fica
+  hospedada de graça (por exemplo, no GitHub Pages), sem depender do
+  domínio glowbox.app.br, e tem como contato o e-mail dedicado do Glowbox
+  (decisão 4 de `04-arquitetura.md`).
 
 **Regras R:** nenhuma regra da nota 04 trata de conta. Excluir a conta
 equivale a tirar todas as séries de Minhas séries e todos os filmes de Meus
@@ -427,13 +432,16 @@ lançamento.
 3. Obter a licença comercial do TMDB, obrigatória com o Premium (regra 8
    do CLAUDE.md). Plano B: lançar com o Premium desligado até a licença
    ser resolvida (`02-monetizacao.md`).
-4. Criar as contas de desenvolvedor no Google Play (US$ 25, uma vez) e na
-   Apple (US$ 99 por ano).
+4. Criar as contas de desenvolvedor no Google Play (US$ 25, uma vez, no
+   marco da assinatura) e na Apple (US$ 99 por ano, no M8).
 5. Publicar a página web de exclusão de conta (exigência do Google Play;
    ver item 1) e informar o endereço dela na ficha do app no Google Play.
-   Pode ficar em glowbox.app.br, mas não exige domínio próprio.
+   Hospedagem gratuita (por exemplo, GitHub Pages), sem depender do domínio
+   glowbox.app.br.
 6. Configurar os produtos de assinatura nas duas lojas e no RevenueCat,
    com os preços aprovados (R$ 6,90 por mês e R$ 39,90 por ano) e o teste
    de 7 dias grátis só no anual.
 7. Publicar os Termos de uso num endereço público.
 8. Avaliar MEI ou contador quando houver receita.
+9. Criar e-mail dedicado do Glowbox (gratuito, por exemplo um Gmail próprio
+   do app), usado na página de exclusão e na política de privacidade.
