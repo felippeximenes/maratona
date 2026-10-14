@@ -4,6 +4,17 @@
 
 Escopo aprovado pelo Felippe em 13/10/2026.
 
+Pontos em aberto resolvidos no mesmo dia:
+- **Exclusão de conta pela web:** obrigatória no Google Play; entrou no item
+  1 como critério de aceite e nas pendências antes da publicação.
+- **Avisos:** dois tipos separados, **Estreia** e **Episódio novo**, ligados
+  por padrão, configuráveis um a um e cada um com **Lembrete 1 h antes**
+  (ligado por padrão, somado ao aviso na hora). Item 9 e R21a da nota 04.
+- **Desfazer ao tirar série da coleção:** 6 segundos. Item 3 e R2.
+- **Pontos detalhados na Fase 3** (revogação do acesso na Apple, marcação
+  otimista com reversão, reduzir movimento, página do filme, importação sem
+  duplicar registros): aprovados como estão.
+
 Os termos seguem o glossário de `docs/estudo-apk/05-tom-e-textos.md` (seção
 4). As regras citadas como **R** são as de `docs/estudo-apk/04-comportamento.md`;
 lá elas usam nomes de trabalho, aqui já aparecem com os termos do glossário
@@ -14,7 +25,8 @@ lá elas usam nomes de trabalho, aqui já aparecem com os termos do glossário
 - **Séries e filmes desde a v1.**
 - **Conta obrigatória.** Entrar com Google e com Apple. A Apple exige
   "Entrar com Apple" quando o app oferece login com Google. Excluir a conta
-  tem de ser possível dentro do app (exigência das duas lojas).
+  tem de ser possível dentro do app (exigência das duas lojas) e, no Google
+  Play, também por uma página web, sem abrir o app.
 - **Android e iOS juntos, com Expo.** Os testes no iOS exigem um iPhone; o
   build é feito na nuvem com EAS, sem Mac.
 - **Custos só na publicação:** Google Play, US$ 25 (uma vez); Apple
@@ -43,6 +55,11 @@ Entrar com Google e com Apple, sair e excluir conta.
   com a mesma conta Google ou Apple começa do zero.
 - Na exclusão de uma conta criada com Apple, o backend revoga o acesso do
   app junto à Apple (exigência da Apple para "Entrar com Apple").
+- Uma página web pública permite pedir a exclusão da conta e dos dados sem
+  abrir o app (exigência do Google Play). A página cita o nome do app ou do
+  desenvolvedor como aparece na loja, explica o que é apagado e como fazer o
+  pedido, e o endereço dela é o mesmo informado no Google Play. Pode ficar
+  em glowbox.app.br, mas não exige domínio próprio.
 
 **Regras R:** nenhuma regra da nota 04 trata de conta. Excluir a conta
 equivale a tirar todas as séries da coleção (R2), sem "Desfazer".
@@ -80,7 +97,7 @@ Temporadas, episódios e estados.
   retomar, o próximo episódio continua de onde a fronteira estava.
 - **Tirar da coleção** pede confirmação com o número de episódios e de horas
   que saem de **Seus números**, sugere **Larguei** para guardar o histórico e,
-  depois de confirmado, oferece **Desfazer** por alguns segundos.
+  depois de confirmado, oferece **Desfazer** por 6 segundos.
 
 **Regras R:** R1, R2, R3, R4, R5 (contagem de não marcados por temporada),
 R14 (etiqueta em **Quero ver** e **Larguei**), R22 ("horário não informado").
@@ -100,7 +117,7 @@ R14 (etiqueta em **Quero ver** e **Larguei**), R22 ("horário não informado").
   hora, usando a duração do TMDB ou 100 minutos quando faltar.
 
 **Regras R:** R15, R16, R17, R24, R25. A nota 04 não detalha filmes além
-disso; o restante deste item é proposta da Fase 3.
+disso; o restante deste item foi definido na Fase 3.
 
 ### 5. Marcar
 
@@ -182,14 +199,19 @@ Temporada 0 oculta por padrão, com opção por série.
 
 ### 9. Avisos
 
-**Estreia** e **Lembrete 1 h antes**, com horário do TVmaze, e horário
-silencioso com entrega às 7h.
+Dois tipos, **Estreia** e **Episódio novo**, cada um com **Lembrete 1 h
+antes**, com horário do TVmaze, e horário silencioso com entrega às 7h.
 
 **Critérios de aceite**
-- Com horário conhecido (TVmaze), o aviso de **Estreia** chega no momento da
-  exibição e o **Lembrete 1 h antes**, uma hora antes, ambos no fuso do
-  aparelho. Sem horário, só sai o **Aviso no dia** às 10h e a página da série
-  mostra "horário não informado".
+- **Estreia** avisa o primeiro episódio de uma temporada nova ou de uma série
+  nova (T1 E1); **Episódio novo** avisa os episódios seguintes. Os dois tipos
+  vêm ligados por padrão, cada um com o **Lembrete 1 h antes** também ligado,
+  e os quatro podem ser ligados e desligados um a um em Configurações.
+- Com horário conhecido (TVmaze), o aviso chega no momento da exibição e,
+  com o lembrete ligado, também uma hora antes, ambos no fuso do aparelho.
+  Sem horário, só sai o **Aviso no dia** às 10h (do tipo do episódio, se
+  esse tipo estiver ligado), sem lembrete, e a página da série mostra
+  "horário não informado".
 - Sai no máximo um aviso por série por dia; lançamento em bloco gera um aviso
   só, com o número de episódios.
 - O horário silencioso vem ligado de 0h a 7h, configurável e desligável.
@@ -198,7 +220,7 @@ silencioso com entrega às 7h.
 - Séries **Quero ver** e **Larguei** não recebem avisos, e marcar o episódio
   como **Visto** antes da entrega cancela os avisos pendentes dele.
 
-**Regras R:** R18, R19, R20, R21, R22, R22a, R23, R3, R14.
+**Regras R:** R18, R19, R20, R21, R21a, R22, R22a, R23, R3, R14.
 
 ### 10. Seus números
 
@@ -276,3 +298,6 @@ CLAUDE.md (atribuição do TMDB).
    CLAUDE.md).
 4. Criar as contas de desenvolvedor no Google Play (US$ 25, uma vez) e na
    Apple (US$ 99 por ano).
+5. Publicar a página web de exclusão de conta (exigência do Google Play;
+   ver item 1) e informar o endereço dela na ficha do app no Google Play.
+   Pode ficar em glowbox.app.br, mas não exige domínio próprio.

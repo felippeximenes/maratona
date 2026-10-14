@@ -39,7 +39,8 @@ nada, a regra é uma proposta nossa e aparece como tal.
    fonte complementar de horário, consultada só pelo backend**, e cair para
    aviso por data quando não houver horário. "Uma hora antes" só é enviada
    quando o horário é conhecido (R20 a R23). Adotado (decisão 1); a stack do
-   CLAUDE.md foi atualizada.
+   CLAUDE.md foi atualizada. Os avisos têm dois tipos, estreia e episódio
+   novo, configuráveis um a um (R21a, decisão 7).
 
 ## Definições
 
@@ -119,8 +120,8 @@ Remover tira a série da coleção e **apaga os registros de visualização dela
 depois de uma confirmação que diz quantos episódios e quantas horas saem das
 estatísticas. Quem quer guardar o histórico sem ver mais a série usa "parei".
 Depois de confirmada a remoção, a confirmação leve "Série removida ·
-Desfazer" fica na tela por alguns segundos (duração a definir na Fase 3).
-Até esse prazo acabar, "Desfazer" restaura tudo (decisão 5).
+Desfazer" fica na tela por 6 segundos (decisão 5, prazo definido na Fase 3).
+Até esse prazo acabar, "Desfazer" restaura tudo.
 
 **Exemplos.**
 - Dado uma série não adicionada. Quando o usuário toca em "Adicionar". Então
@@ -634,12 +635,13 @@ contrário, a do TMDB.
 - Casamento de IDs falhou ou o TVmaze não tem a série: tudo fica "só data".
 - Horário mudou depois de agendada a notificação: o backend reagenda.
 
-### R21 – Notificação de estreia
+### R21 – Aviso na exibição
 
-**Descrição.** Para séries acompanhadas com notificação ligada:
+**Descrição.** Para séries acompanhadas, quando o tipo do episódio (R21a)
+está ligado:
 - **Exato:** enviada no momento da exibição: "S2E5 de X está no ar".
-- **Só data:** enviada às 10h do fuso do usuário naquela data: "Estreia
-  hoje: S2E5 de X".
+- **Só data:** enviada às 10h do fuso do usuário naquela data: "S2E5 de X
+  sai hoje".
 - **Sem data:** nenhuma.
 
 Uma notificação por série por dia (R18, R19). Séries para depois e paradas
@@ -650,17 +652,49 @@ adiados, nunca descartados (R22).
 - Dado um episódio exato às 22h de Brasília e o usuário no Acre. Quando dá
   20h no Acre. Então chega "está no ar".
 - Dado um episódio só com data, 15/11. Quando dá 10h de 15/11 no fuso do
-  usuário. Então chega "Estreia hoje".
+  usuário. Então chega "sai hoje".
 
 **Casos-limite.**
 - Estreia de temporada (episódio 1) usa o texto "Temporada N de X estreia
   hoje" ou "está no ar".
 - Notificação geral desligada nas configurações vence a da série.
 
+### R21a – Tipos de aviso (decisão 7)
+
+**Descrição.** Há dois tipos de aviso, cada um com sua chave em
+Configurações:
+- **Estreia:** o primeiro episódio de uma temporada nova (E1 de qualquer
+  temporada contável) ou de uma série nova (S1E1).
+- **Episódio novo:** todos os episódios seguintes.
+
+Os dois vêm ligados por padrão. Cada tipo tem a opção "uma hora antes"
+(R22), também ligada por padrão, que soma um aviso ao da exibição (R21) e
+não o substitui. São quatro chaves independentes, mas a opção "uma hora
+antes" de um tipo desligado não sai.
+
+**Exemplos.**
+- Dado os padrões e S3E1 de X às 22h. Quando dá 21h e depois 22h. Então
+  chegam "X começa em 1 hora" e "Temporada 3 de X está no ar".
+- Dado **Episódio novo** desligado e **Estreia** ligado. Quando sai S3E2.
+  Então nenhum aviso chega.
+- Dado **Episódio novo** ligado com "uma hora antes" desligado. Quando sai
+  S3E2 às 22h. Então só chega o aviso das 22h.
+
+**Casos-limite.**
+- Vários episódios da mesma série no mesmo dia (R18, R19): o grupo vira um
+  aviso só e recebe o tipo do primeiro episódio. Temporada inteira lançada
+  em bloco é **Estreia**; se esse tipo estiver desligado, o grupo não gera
+  aviso, mesmo com **Episódio novo** ligado.
+- Especiais com "incluir especiais" ligado (R12) são sempre **Episódio
+  novo**; sem a opção, não geram aviso (R11).
+- Série que volta depois de terminada (R13): o E1 da temporada nova é
+  **Estreia**.
+
 ### R22 – Notificação "uma hora antes"
 
-**Descrição.** Só para episódios com momento **exato**: enviada uma hora
-antes. Sem horário, não é enviada, e a tela da série mostra "horário não
+**Descrição.** Só para episódios com momento **exato** e com a opção "uma
+hora antes" ligada no tipo do episódio (R21a): enviada uma hora antes, além
+do aviso na exibição. Sem horário, não é enviada, e a tela da série mostra "horário não
 informado" ao lado da data, para o usuário entender por que não recebeu.
 
 **Exemplos.**
@@ -797,15 +831,16 @@ Nenhum código, texto ou recurso do TV Time foi usado. O APK não foi aberto.
 - **Números escolhidos sem dados:** 30 dias para "sem assistir há algum
   tempo", 14 e 30 dias para as etiquetas, 10h para aviso só por data, 40 e
   100 minutos de duração padrão, horário silencioso de 0h a 7h (padrão
-  aprovado na decisão 6) e o prazo do "Desfazer" ao remover série (a definir).
-  Todos são ajustáveis.
+  aprovado na decisão 6) e 6 segundos para o "Desfazer" ao remover série
+  (decisão 5). Todos são ajustáveis.
 - **Fora desta nota:** filmes além de visto/reassistido/estatísticas, listas
   personalizadas, widget, importação e a ordem alternativa de episódios
   (ordem de DVD, absoluta) que o TMDB oferece para algumas séries.
 
 ## Decisões tomadas (13/10/2026)
 
-O Felippe aprovou as seis recomendações, com ajustes nas decisões 5 e 6.
+O Felippe aprovou as seis recomendações, com ajustes nas decisões 5 e 6. A
+decisão 7 e o prazo da decisão 5 foram definidos na Fase 3, no mesmo dia.
 
 1. **TVmaze como segunda fonte, só para horário e duração:** aprovado. Pelo
    backend, com atribuição nos créditos e queda para aviso por data quando
@@ -820,8 +855,13 @@ O Felippe aprovou as seis recomendações, com ajustes nas decisões 5 e 6.
 5. **Remover série apaga o histórico e tira as horas das estatísticas:**
    aprovado, com a confirmação que mostra o que sai e sugere "Parei de
    assistir". **Ajuste:** depois de remover, o app oferece "Desfazer" por
-   alguns segundos. Afeta R2.
+   6 segundos (prazo definido na Fase 3). Afeta R2.
 6. **Horário silencioso de 0h a 7h ligado por padrão:** aprovado. **Ajuste:**
    avisos que cairiam no horário silencioso não são descartados; são
    entregues no fim dele (7h no padrão). Início e fim são configuráveis.
    Afeta R21, R22 e R22a.
+7. **Dois tipos de aviso (definido na Fase 3):** **Estreia** (primeiro
+   episódio de temporada nova ou de série nova) e **Episódio novo** (os
+   seguintes), ambos ligados por padrão e configuráveis um a um. Cada tipo
+   tem a opção "uma hora antes", ligada por padrão e somada ao aviso na
+   exibição. Afeta R21, R21a e R22.

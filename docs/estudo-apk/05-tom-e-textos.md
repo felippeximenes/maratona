@@ -208,7 +208,7 @@ operacional. Um conceito, um termo, em todas as telas.
 | Especiais / temporada 0 | **Extras** (opção: **Incluir extras**) | Cobre especiais, OVAs e bônus, que é o que mora na temporada 0. |
 | Temporada / episódio | **Temporada**, **Episódio**; abreviação **T2 E5** | Vocabulário comum, sem alternativa melhor. Sem zero à esquerda e com espaço, mais legível. |
 | Estatísticas | **Seus números**; métricas **Horas vistas**, **Episódios vistos** | Mais pessoal que o termo técnico e sem trocadilho de marca. |
-| Notificações | **Notificações** (tipos: **Estreia**, **Episódio novo**, **Lembrete 1 h antes**, **Aviso no dia**) | Termo do sistema operacional; trocar confundiria. Os tipos seguem as regras R21 e R22 da nota 04. |
+| Notificações | **Notificações** (tipos: **Estreia**, **Episódio novo**, **Lembrete 1 h antes**, **Aviso no dia**) | Termo do sistema operacional; trocar confundiria. Os tipos seguem as regras R21, R21a e R22 da nota 04. |
 | Nota / resenha | **Nota** e **Comentário** | Separa o que o TV Time juntava em "avaliação" (se houver comentários no nosso app). |
 
 ### Equivalência com a nota 04
