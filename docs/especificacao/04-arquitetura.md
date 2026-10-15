@@ -858,6 +858,19 @@ pelo Android; o iOS entra no M8 (decisão 1 da seção 7).
   abrir a série e conferir temporadas e "sem data"; título de episódio não
   aparece; modo avião mostra "Tentar de novo".
 - **Cobre:** item 2; itens 3 e 4 (leitura); item 12 (créditos).
+- **Em andamento (14/10/2026).** Feito: tabelas `titles`, `seasons` e
+  `episodes` com leitura para quem está logado; funções `search` e `title`
+  (série 24 h, filme 7 dias, catálogo velho servido se o TMDB cair); R20 e
+  R25 no núcleo; telas **Buscar**, Página da série, Página do filme,
+  Episódio e **Créditos**. Confirmado o "(a verificar)" da D2: a Edge
+  Function importa `core/` direto (o envio com `--use-api` leva o arquivo).
+  Provisório até os marcos seguintes: Página da série, do filme e Episódio
+  abrem por cima das abas; **Créditos** fica no **Perfil** até existir
+  Configurações > Sobre (M7); sem horários do TVmaze, todo episódio com data
+  mostra "horário não informado" (tarefa 4.2 no M5); **Buscar** ainda não
+  marca o que está no acervo (M3); episódios que somem do TMDB continuam no
+  catálogo (tratar junto com os registros, M4). A chave do TMDB fica no
+  segredo `TMDB_ACCESS_TOKEN` (token de leitura v4).
 
 ### M3. Acervo e estados
 

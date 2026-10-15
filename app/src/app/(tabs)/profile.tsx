@@ -1,3 +1,4 @@
+import { Link } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Alert, Pressable, StyleSheet, Text, useColorScheme, View } from 'react-native';
 
@@ -34,6 +35,11 @@ export default function ProfileScreen() {
     <View style={[styles.container, { backgroundColor: isDark ? '#000' : '#fff' }]}>
       <Text style={[styles.title, { color }]}>{profile?.display_name ?? 'Perfil'}</Text>
 
+      {/* Provisório: Créditos vai para Configurações > Sobre no M7. */}
+      <Link href="/credits" style={styles.link}>
+        Créditos
+      </Link>
+
       <Pressable accessibilityRole="button" onPress={confirmSignOut} style={styles.button}>
         <Text style={styles.buttonText}>Sair</Text>
       </Pressable>
@@ -59,6 +65,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#D93F3F',
+  },
+  link: {
+    color: '#208AEF',
+    fontSize: 16,
+    fontWeight: '600',
+    padding: 12,
   },
   buttonText: {
     color: '#fff',

@@ -6,6 +6,7 @@ import {
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 
+import { clearCache } from '@/lib/cache';
 import { supabase } from '@/lib/supabase';
 
 GoogleSignin.configure({
@@ -62,5 +63,6 @@ export async function signInWithGoogle(): Promise<boolean> {
 
 export async function signOut() {
   // Sai também do Google para o seletor de contas aparecer no próximo login.
-  await Promise.allSettled([GoogleSignin.signOut(), supabase.auth.signOut()]);
+  // Sair apaga do aparelho a cópia das telas.
+  await Promise.allSettled([GoogleSignin.signOut(), supabase.auth.signOut(), clearCache()]);
 }

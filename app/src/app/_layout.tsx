@@ -23,6 +23,10 @@ function RootNavigator() {
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Protected guard={!!session}>
         <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="show/[tmdbId]" options={{ headerShown: true, headerBackTitle: 'Voltar' }} />
+        <Stack.Screen name="movie/[tmdbId]" options={{ headerShown: true, headerBackTitle: 'Voltar' }} />
+        <Stack.Screen name="episode/[id]" options={{ headerShown: true, headerBackTitle: 'Voltar' }} />
+        <Stack.Screen name="credits" options={{ headerShown: true, title: 'Créditos' }} />
       </Stack.Protected>
       <Stack.Protected guard={!session}>
         <Stack.Screen name="sign-in" />
